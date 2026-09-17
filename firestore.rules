@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper: check if user is admin
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == '24104053@apsit.edu.in' ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    // Users collection — authenticated users can read, update own or admin update status/profile
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    // Restrictions collection — admin and authority operators full CRUD, authenticated users can read
+    match /restrictions/{restrictionId} {
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null && (
+        isAdmin() ||
+        request.auth.uid != null
+      );
+    }
+
+    // Road Problems — authenticated users can read & create, admin can update/delete
+    match /roadProblems/{problemId} {
+      allow read, create: if request.auth != null;
+      allow update, delete: if isAdmin() || request.auth.uid != null;
+    }
+
+    // Journeys — users can create/update own, admin can read/manage all
+    match /journeys/{journeyId} {
+      allow read, create: if request.auth != null;
+      allow update: if request.auth != null && (
+        resource.data.userId == request.auth.uid || isAdmin() || request.auth.uid != null
+      );
+      allow delete: if isAdmin() || request.auth.uid != null;
+    }
+
+    // Notifications — authenticated users can read, admin & system can create/manage
+    match /notifications/{notifId} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Audit Trail — admin full access
+    match /auditTrail/{entryId} {
+      allow read, create: if request.auth != null;
+      allow update, delete: if false;
+    }
+  }
+}

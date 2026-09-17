@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0; url=pages/Authentication/login.html" />
+  <title>TransitClear — Driver Console Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Immediate redirect to Login screen
+    window.location.replace("pages/Authentication/login.html");
+  </script>
+</head>
+<body style="background: var(--color-background-soft); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px;">
+  <div style="background: var(--color-white); max-width: 520px; width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--color-border-subtle); padding: 32px; box-shadow: var(--shadow-modal); text-align: center;">
+    <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: var(--radius-lg); background: var(--color-primary-navy); color: #fff; margin-bottom: 16px;">
+      <span class="material-symbols-outlined" style="font-size: 32px;">local_shipping</span>
+    </div>
+    <h1 style="font-size: 22px; font-weight: 800; color: var(--color-text-main); margin-bottom: 6px;">TransitClear Driver Portal</h1>
+    <p style="font-size: 14px; color: var(--color-text-muted); margin-bottom: 24px;">Redirecting you to the driver console...</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+      <a href="pages/User/home.html" class="btn-primary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">home</span>
+        <span>Go to Home Screen</span>
+      </a>
+      <a href="pages/User/journey.html" class="btn-secondary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">map</span>
+        <span>My Journey</span>
+      </a>
+      <a href="pages/User/alerts.html" class="btn-secondary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">notifications</span>
+        <span>Alerts</span>
+      </a>
+      <a href="pages/User/report-problem.html" class="btn-secondary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">warning</span>
+        <span>Report Problem</span>
+      </a>
+      <a href="pages/User/profile.html" class="btn-secondary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">person</span>
+        <span>Driver Profile</span>
+      </a>
+
+      <div style="height: 1px; background-color: var(--color-border-subtle); margin: 6px 0;"></div>
+
+      <a href="pages/Authentication/login.html" class="btn-secondary-48" style="text-decoration: none; justify-content: center;">
+        <span class="material-symbols-outlined">login</span>
+        <span>Authentication — Sign In / Sign Up</span>
+      </a>
+
+      <a href="pages/Admin/dashboard.html" class="btn-primary-48" style="text-decoration: none; justify-content: center; background-color: #0f172a;">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span>Admin Operations Console</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

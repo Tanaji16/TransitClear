@@ -1,0 +1,799 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TransitClear Admin — Users</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#b9c7e0","outline":"#76777d","on-secondary-container":"#fefcff","secondary-container":"#316bf3","on-primary-container":"#7c839b","on-surface-variant":"#45464d","surface-container-highest":"#d3e4fe","outline-variant":"#c6c6cd","on-primary":"#ffffff","inverse-surface":"#213145","background":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#003ea8","primary-container":"#131b2e","on-surface":"#0b1c30","on-error":"#ffffff","surface-container-high":"#dce9ff","secondary-fixed-dim":"#b4c5ff","primary-fixed-dim":"#bec6e0","on-secondary-fixed":"#00174b","tertiary-container":"#0d1c2f","on-primary-fixed-variant":"#3f465c","surface":"#f8f9ff","on-tertiary-fixed":"#0d1c2f","surface-container":"#e5eeff","primary-fixed":"#dae2fd","tertiary-fixed":"#d5e3fd","on-tertiary-container":"#76859b","secondary":"#0051d5","secondary-fixed":"#dbe1ff","on-primary-fixed":"#131b2e","surface-bright":"#f8f9ff","tertiary":"#000000","inverse-primary":"#bec6e0","error-container":"#ffdad6","on-background":"#0b1c30","on-secondary":"#ffffff","primary":"#000000","error":"#ba1a1a","on-tertiary-fixed-variant":"#3a485c","on-error-container":"#93000a","surface-dim":"#cbdbf5","surface-tint":"#565e74","inverse-on-surface":"#eaf1ff","on-tertiary":"#ffffff","surface-container-low":"#eff4ff","surface-variant":"#d3e4fe"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xs":"0.25rem","margin-sm":"1rem","space-sm":"0.5rem","space-md":"0.75rem","gutter":"1rem","space-lg":"1rem","margin":"1.5rem","gutter-lg":"1.5rem","space-xl":"1.5rem"},fontFamily:{"label-caps":["Inter"],"data-metric":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"data-tabular":["Inter"],"title-sm":["Inter"]},fontSize:{"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"700"}],"data-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"data-tabular":["13px",{"lineHeight":"18px","fontWeight":"500"}],"title-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary-container text-on-primary flex flex-col justify-between z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-gutter-lg pt-margin pb-space-lg flex flex-col gap-space-xs"><a href="dashboard.html" class="flex items-center gap-space-sm text-inherit no-underline"><div class="w-7 h-7 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary text-[18px]">traffic</span></div><span class="font-headline-lg text-headline-lg tracking-tight text-white font-bold">TransitClear</span></a><div class="flex items-center gap-space-xs"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span><span class="font-label-caps text-label-caps uppercase text-on-primary-container tracking-wider">Operations Control</span></div></div><div class="px-gutter-lg py-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-primary-container tracking-wider">Main Navigation</span></div><nav class="flex flex-col gap-space-xs px-gutter"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="dashboard" href="dashboard.html"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="restrictions" href="restrictions.html"><span class="material-symbols-outlined text-[20px]">construction</span><span>Restrictions</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="road-problems" href="road-problems.html"><span class="material-symbols-outlined text-[20px]">warning</span><span>Road Problems</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="affected-journeys" href="affected-journeys.html"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Affected Journeys</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm bg-secondary text-on-secondary shadow-sm font-semibold" data-path="users" href="users.html" aria-current="page"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="reports" href="reports.html"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Reports</span></a></nav></div><div class="flex flex-col"><div class="h-px mx-gutter bg-surface-container-highest/15 mb-space-sm"></div><nav class="flex flex-col gap-space-xs px-gutter pb-margin"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="settings" href="settings.html"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" data-path="admin-profile" href="admin-profile.html"><span class="material-symbols-outlined text-[20px]">account_circle</span><span>Admin Profile</span></a></nav></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-semibold">TransitClear</span><span class="text-outline-variant">|</span></div><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-[16px]">shield</span><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Authority: Maharashtra Traffic Control</span></div></div><div class="flex items-center gap-gutter"><button aria-label="Notifications" class="relative p-space-xs rounded hover:bg-surface-container transition-colors" type="button" onclick="alert('Notification Center: Real-time user updates active.')"><span class="material-symbols-outlined text-on-surface-variant text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><a href="admin-profile.html" class="flex items-center gap-space-md pl-space-sm cursor-pointer hover:opacity-90"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left"><div class="flex items-center gap-space-xs"><span class="font-title-sm text-title-sm text-on-surface font-semibold">Admin</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">arrow_drop_down</span></div><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Chief Controller</span></div></a></div></header><main class="relative pt-14 w-full bg-surface min-h-screen px-gutter-lg py-margin"><div class="flex flex-col w-full">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-margin pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Users</h1>
+<span class="inline-flex items-center px-space-md py-space-xs rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase font-bold tracking-wider shadow-sm" id="user-count-badge">
+          Loading Users...
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+        Manage drivers, institutional operators, and commercial fleet users across the corridor network.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-lowest text-on-surface font-title-sm text-title-sm rounded shadow-sm hover:bg-surface-container transition-colors" type="button" id="btnExportUsers">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span class="">Export Registry</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary font-title-sm text-title-sm rounded shadow-sm hover:bg-primary-container transition-colors" type="button" id="btnProvisionUser">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span class="">Provision User</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm mb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<div class="md:col-span-6 relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-9 pl-10 pr-space-md bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-secondary transition-all" id="user-search-input" placeholder="Search users by name, email, vehicle number, phone..." type="text">
+</div>
+<div class="md:col-span-3">
+<div class="relative">
+<select class="w-full h-9 px-space-md pr-8 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-secondary transition-all cursor-pointer" id="role-filter">
+<option value="">All Roles (Driver, Fleet Manager, Admin)</option>
+<option value="driver">Driver</option>
+<option value="fleet_manager">Fleet Manager</option>
+<option value="admin">Authority Admin</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-3 flex items-center gap-space-sm">
+<div class="relative w-full">
+<select class="w-full h-9 px-space-md pr-8 bg-surface-container-low rounded text-body-sm font-body-sm text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-secondary transition-all cursor-pointer" id="status-filter">
+<option value="">All Status (Active, Blocked, Suspended)</option>
+<option value="active">Active</option>
+<option value="blocked">Blocked</option>
+<option value="suspended">Suspended</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<button class="h-9 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface-variant rounded flex items-center justify-center transition-colors" title="Reset Filters" type="button" id="btnResetFilters">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="relative grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<div class="xl:col-span-8 flex flex-col bg-surface-container-lowest rounded shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="h-9 bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps tracking-wider uppercase">
+<th class="pl-space-lg pr-space-md font-bold" scope="col">Name</th>
+<th class="px-space-md font-bold" scope="col">Role</th>
+<th class="px-space-md font-bold" scope="col">Vehicle</th>
+<th class="px-space-md font-bold" scope="col">Vehicle Number</th>
+<th class="px-space-md font-bold text-center" scope="col">Status</th>
+<th class="pl-space-md pr-space-lg font-bold text-right" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="users-table-body">
+<tr><td colspan="6" class="p-8 text-center text-on-surface-variant">Connecting to live user registry...</td></tr>
+</tbody>
+</table>
+</div>
+<div class="h-11 px-space-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="users-count-footer">Showing 0 users</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Real-time sync</span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+</div>
+</div>
+<aside class="xl:col-span-4 bg-surface-container-lowest rounded shadow-md flex flex-col transition-all hidden" id="user-drawer">
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">User Details</span>
+</div>
+<button aria-label="Close user details" class="w-7 h-7 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" id="btnCloseDrawer" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-headline-md shadow-sm">
+<span id="detail-avatar" class="">--</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold" id="detail-name">User Name</h2>
+<span class="font-title-sm text-title-sm text-secondary font-medium" id="detail-role">Role</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-caps text-label-caps uppercase font-bold shadow-sm" id="detail-status">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+Active
+</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm bg-surface-container-low p-space-md rounded">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Email Address</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-medium mt-0.5" id="detail-email">—</span>
+</div>
+<div class="h-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Mobile Contact</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-semibold mt-0.5" id="detail-mobile">—</span>
+</div>
+<div class="h-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Assigned Vehicle</span>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-0.5" id="detail-vehicle">—</span>
+</div>
+<div class="h-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Vehicle Registration</span>
+<span class="font-data-tabular text-data-tabular text-on-surface font-bold mt-0.5 tracking-tight" id="detail-vehicleno">—</span>
+</div>
+<div class="h-px bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Account Registration</span>
+<span class="font-body-sm text-body-sm text-on-surface mt-0.5" id="detail-permit">—</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container rounded flex items-center justify-between" id="detail-reports-box">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">warning</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps uppercase text-on-surface font-bold">Driver Road Reports</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="detail-reports-count">Checking reports...</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-9 px-space-md rounded bg-surface-container-high text-on-surface hover:bg-secondary hover:text-on-secondary font-title-sm text-title-sm font-semibold transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="btnWarnUser" type="button">
+<span class="material-symbols-outlined text-[18px]">notification_important</span>
+<span>SEND WARNING</span>
+</button>
+<button class="w-full h-9 px-space-md rounded bg-error-container text-error hover:bg-error hover:text-on-error font-title-sm text-title-sm font-semibold transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="deactivate-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+<span>DEACTIVATE USER</span>
+</button>
+<button class="w-full h-9 px-space-md rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm transition-colors text-center" id="btnCloseDrawer2" type="button">
+CLOSE
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+
+<!-- Provision User Modal -->
+<div class="hidden fixed inset-0 bg-primary-container/60 backdrop-blur-sm z-50 flex items-center justify-center p-gutter" id="provisionModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl p-space-xl shadow-xl flex flex-col gap-space-lg animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">person_add</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Provision New User</h3>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" id="btnCloseProvisionModal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" id="provisionUserForm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserName">Full Name *</label>
+<input class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="newUserName" required type="text" placeholder="e.g. Ramesh Kadam">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserRole">Role *</label>
+<select class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary cursor-pointer" id="newUserRole">
+<option value="driver">Driver</option>
+<option value="fleet_manager">Fleet Manager</option>
+<option value="admin">Authority Admin</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserEmail">Email Address *</label>
+<input class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="newUserEmail" required type="email" placeholder="driver@transitclear.gov">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserPhone">Mobile Number</label>
+<input class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="newUserPhone" type="tel" placeholder="+91 98765 43210">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserVehicle">Vehicle Type</label>
+<input class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all" id="newUserVehicle" type="text" placeholder="Heavy Truck / Tanker / Bus">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="newUserPlate">Vehicle Number</label>
+<input class="h-9 px-space-md rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all uppercase" id="newUserPlate" type="text" placeholder="MH-12-AB-1234">
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+<button class="px-space-md py-space-sm rounded bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="btnCancelProvision" type="button">
+Cancel
+</button>
+<button class="px-space-lg py-space-sm rounded bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-colors shadow" type="submit" id="btnSubmitProvision">
+Provision Account
+</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Warning Modal -->
+<div class="hidden fixed inset-0 bg-primary-container/60 backdrop-blur-sm z-50 flex items-center justify-center p-gutter" id="warningModal">
+  <div class="bg-surface-container-lowest w-full max-w-lg rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md border border-outline-variant/50 animate-in fade-in zoom-in-95 duration-150">
+    <div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+      <div class="flex items-center gap-space-sm">
+        <span class="material-symbols-outlined text-amber-500 text-[24px]">notification_important</span>
+        <div>
+          <h3 class="font-headline-md text-headline-md text-on-surface font-bold">Dispatch Authority Warning</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Send an official administrative advisory to user's notifications inbox</p>
+        </div>
+      </div>
+      <button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" id="btnCloseWarningModal" type="button">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Target User Details Summary -->
+    <div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-on-secondary flex items-center justify-center font-bold text-xs" id="warn-target-avatar">U</div>
+        <div class="flex flex-col">
+          <span class="font-title-sm text-title-sm text-on-surface font-semibold" id="warn-target-name">—</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant" id="warn-target-email">—</span>
+        </div>
+      </div>
+      <span class="bg-surface-container-high px-space-xs py-0.5 rounded font-data-tabular text-data-tabular text-xs text-on-surface" id="warn-target-vehicle">—</span>
+    </div>
+
+    <!-- Quick Presets -->
+    <div class="flex flex-col gap-1.5">
+      <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Preset Notice Directives (Click to Use)</span>
+      <div class="grid grid-cols-2 gap-2">
+        <button type="button" class="warn-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-msg="Notice: Vehicle telemetry indicates speed limit exceedance in controlled highway corridor. Please adhere strictly to posted speed advisories.">
+          ⚠️ Speed Exceedance
+        </button>
+        <button type="button" class="warn-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-msg="Notice: Commercial vehicle detected entering restricted corridor during peak restricted hours without valid transit clearance.">
+          ⛔ Restriction Breach
+        </button>
+        <button type="button" class="warn-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-msg="Notice: Heavy transport vehicles must strictly maintain the designated heavy vehicle / left transit lane on expressways.">
+          🚛 Lane Indiscipline
+        </button>
+        <button type="button" class="warn-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-msg="Notice: Discrepancies noted in submitted road hazard report. Please ensure accurate and verifiable telemetry when reporting incidents.">
+          📋 Hazard Verification
+        </button>
+      </div>
+    </div>
+
+    <!-- Custom Warning Text -->
+    <div class="flex flex-col gap-space-xs">
+      <label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="warningMessageText">Warning Direct Message *</label>
+      <textarea id="warningMessageText" rows="4" class="w-full p-space-sm rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all resize-none border border-outline-variant/30" placeholder="Type custom advisory message to transmit..."></textarea>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+      <button class="px-space-md py-space-sm rounded bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="btnCancelWarning" type="button">
+        Cancel
+      </button>
+      <button class="px-space-lg py-space-sm rounded bg-primary text-on-primary font-title-sm text-title-sm hover:bg-primary-container transition-colors shadow flex items-center gap-1.5" type="button" id="btnSubmitWarning">
+        <span class="material-symbols-outlined text-[18px]">send</span>
+        <span>Dispatch Warning</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Status Modal (Deactivate / Unblock) -->
+<div class="hidden fixed inset-0 bg-primary-container/60 backdrop-blur-sm z-50 flex items-center justify-center p-gutter" id="confirmStatusModal">
+  <div class="bg-surface-container-lowest w-full max-w-md rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md border border-outline-variant/50 animate-in fade-in zoom-in-95 duration-150">
+    <div class="flex items-start gap-space-md">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" id="confirmStatusIconBox">
+        <span class="material-symbols-outlined text-[24px]" id="confirmStatusIcon">person_off</span>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="font-headline-md text-headline-md text-on-surface font-bold" id="confirmStatusTitle">Deactivate User Account</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed" id="confirmStatusDesc">
+          Are you sure you want to block this user? They will be restricted from accessing driver features and route advisories.
+        </p>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+      <button class="px-space-md py-space-sm rounded bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="btnCancelStatusModal" type="button">
+        Cancel
+      </button>
+      <button class="px-space-lg py-space-sm rounded font-title-sm text-title-sm transition-colors shadow flex items-center gap-1.5" type="button" id="btnConfirmStatusAction">
+        <span class="material-symbols-outlined text-[18px]" id="btnConfirmStatusIcon">check</span>
+        <span id="btnConfirmStatusText">Confirm</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Action Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-outline-variant transition-all duration-300" id="user-action-toast">
+  <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5" id="user-toast-icon">check_circle</span>
+  <div class="flex flex-col flex-1 min-w-0">
+    <span class="font-title-sm text-title-sm text-on-surface font-bold" id="user-toast-title">Action Completed</span>
+    <p class="font-body-sm text-body-sm text-on-surface-variant break-words" id="user-toast-message">User updated successfully.</p>
+  </div>
+  <button class="text-on-surface-variant hover:text-on-surface p-1" id="close-user-toast" type="button">
+    <span class="material-symbols-outlined text-[18px]">close</span>
+  </button>
+</div>
+
+<script src="../../env.js"></script>
+<script type="module" src="../../auth-guard.js"></script>
+<script type="module">
+import { db, collection, addDoc, serverTimestamp } from '../../firebase-config.js';
+import { 
+  onUsersSnapshot, 
+  blockUser, 
+  unblockUser, 
+  warnUser, 
+  getUserReports, 
+  exportToCSV, 
+  formatDate 
+} from '../../admin-firebase.js';
+
+let allUsers = [];
+let selectedUser = null;
+
+const tableBody = document.getElementById('users-table-body');
+const searchInput = document.getElementById('user-search-input');
+const roleFilter = document.getElementById('role-filter');
+const statusFilter = document.getElementById('status-filter');
+const userBadge = document.getElementById('user-count-badge');
+const countFooter = document.getElementById('users-count-footer');
+const userDrawer = document.getElementById('user-drawer');
+const btnCloseDrawer = document.getElementById('btnCloseDrawer');
+const btnCloseDrawer2 = document.getElementById('btnCloseDrawer2');
+const deactivateBtn = document.getElementById('deactivate-btn');
+const btnWarnUser = document.getElementById('btnWarnUser');
+const btnExportUsers = document.getElementById('btnExportUsers');
+const btnResetFilters = document.getElementById('btnResetFilters');
+
+// Modals
+const provisionModal = document.getElementById('provisionModal');
+const btnProvisionUser = document.getElementById('btnProvisionUser');
+const btnCloseProvisionModal = document.getElementById('btnCloseProvisionModal');
+const btnCancelProvision = document.getElementById('btnCancelProvision');
+const provisionUserForm = document.getElementById('provisionUserForm');
+
+btnProvisionUser?.addEventListener('click', () => provisionModal?.classList.remove('hidden'));
+btnCloseProvisionModal?.addEventListener('click', () => provisionModal?.classList.add('hidden'));
+btnCancelProvision?.addEventListener('click', () => provisionModal?.classList.add('hidden'));
+
+provisionUserForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = document.getElementById('btnSubmitProvision');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Provisioning...'; }
+  try {
+    const name = document.getElementById('newUserName').value.trim();
+    const role = document.getElementById('newUserRole').value;
+    const email = document.getElementById('newUserEmail').value.trim().toLowerCase();
+    const phone = document.getElementById('newUserPhone').value.trim();
+    const vehicleType = document.getElementById('newUserVehicle').value.trim() || '—';
+    const vehicleNumber = document.getElementById('newUserPlate').value.trim().toUpperCase() || '—';
+
+    await addDoc(collection(db, 'users'), {
+      name,
+      displayName: name,
+      role,
+      email,
+      phone,
+      vehicleType,
+      vehicleNumber,
+      status: 'active',
+      createdAt: serverTimestamp()
+    });
+
+    provisionUserForm.reset();
+    provisionModal.classList.add('hidden');
+    alert(`User ${name} provisioned successfully in live database.`);
+  } catch (err) {
+    console.error('Provisioning failed:', err);
+    alert('Failed to provision user: ' + err.message);
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Provision Account'; }
+  }
+});
+
+function getInitials(name) {
+  if (!name) return 'U';
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function renderUsers() {
+  const queryText = (searchInput.value || '').toLowerCase().trim();
+  const selectedRole = roleFilter.value;
+  const selectedStatus = statusFilter.value;
+
+  const filtered = allUsers.filter(u => {
+    const name = (u.name || u.displayName || '').toLowerCase();
+    const email = (u.email || '').toLowerCase();
+    const phone = (u.phone || u.mobile || '').toLowerCase();
+    const vehicleNo = (u.vehicleNumber || '').toLowerCase();
+    const matchesQuery = !queryText || name.includes(queryText) || email.includes(queryText) || phone.includes(queryText) || vehicleNo.includes(queryText);
+
+    const matchesRole = !selectedRole || u.role === selectedRole;
+    const userStatus = (u.status || 'active').toLowerCase();
+    const matchesStatus = !selectedStatus || userStatus === selectedStatus;
+
+    return matchesQuery && matchesRole && matchesStatus;
+  });
+
+  userBadge.textContent = `${allUsers.length} Registered Users`;
+  countFooter.textContent = `Showing ${filtered.length} of ${allUsers.length} users`;
+
+  if (filtered.length === 0) {
+    tableBody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-on-surface-variant font-body-sm">No registered users match the applied filters.</td></tr>`;
+    return;
+  }
+
+  tableBody.innerHTML = filtered.map(u => {
+    const initials = getInitials(u.name || u.displayName);
+    const roleText = (u.role === 'admin') ? 'Authority Admin' : (u.role === 'fleet_manager' ? 'Fleet Manager' : 'Driver');
+    const vehicleText = u.vehicleType || u.vehicle || '—';
+    const vehiclePlate = u.vehicleNumber || '—';
+    const userStatus = (u.status || 'active').toLowerCase();
+
+    let statusHtml = '';
+    if (userStatus === 'blocked' || userStatus === 'suspended') {
+      statusHtml = `
+        <span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-error-container text-error font-label-caps text-label-caps uppercase font-bold shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+          ${userStatus}
+        </span>
+      `;
+    } else {
+      statusHtml = `
+        <span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-caps text-label-caps uppercase font-bold shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Active
+        </span>
+      `;
+    }
+
+    const isSelected = selectedUser && selectedUser.id === u.id;
+    const rowClass = isSelected ? 'bg-secondary-fixed/30 hover:bg-secondary-fixed/40' : 'bg-surface-container-lowest hover:bg-surface-container-low';
+
+    return `
+      <tr class="h-12 ${rowClass} transition-colors cursor-pointer border-b border-surface-container/40" data-user-id="${u.id}">
+        <td class="pl-space-lg pr-space-md">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-7 h-7 rounded bg-secondary-container text-on-secondary flex items-center justify-center font-bold text-[11px]">
+              ${initials}
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">${u.name || u.displayName || 'Unnamed User'}</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">${u.phone || u.email || '—'}</span>
+            </div>
+          </div>
+        </td>
+        <td class="px-space-md font-body-sm text-body-sm text-on-surface">${roleText}</td>
+        <td class="px-space-md font-body-sm text-body-sm text-on-surface">${vehicleText}</td>
+        <td class="px-space-md font-data-tabular text-data-tabular text-on-surface">
+          <span class="bg-surface-container px-space-xs py-0.5 rounded">${vehiclePlate}</span>
+        </td>
+        <td class="px-space-md text-center">${statusHtml}</td>
+        <td class="pl-space-md pr-space-lg text-right">
+          <button class="inline-flex items-center gap-1 px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-secondary font-title-sm text-title-sm rounded shadow-sm transition-colors manage-btn" type="button" data-user-id="${u.id}">
+            <span>Manage</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  // Wire row clicks
+  tableBody.querySelectorAll('tr[data-user-id]').forEach(row => {
+    row.addEventListener('click', (e) => {
+      const id = row.getAttribute('data-user-id');
+      const u = allUsers.find(item => item.id === id);
+      if (u) openDrawerForUser(u);
+    });
+  });
+}
+
+async function openDrawerForUser(user) {
+  selectedUser = user;
+  renderUsers(); // Update highlight
+  userDrawer.classList.remove('hidden');
+
+  document.getElementById('detail-avatar').textContent = getInitials(user.name || user.displayName);
+  document.getElementById('detail-name').textContent = user.name || user.displayName || 'Unnamed User';
+  const roleText = (user.role === 'admin') ? 'Authority Administrator' : (user.role === 'fleet_manager' ? 'Fleet Operations Manager' : 'Commercial Driver');
+  document.getElementById('detail-role').textContent = roleText;
+  document.getElementById('detail-email').textContent = user.email || '—';
+  document.getElementById('detail-mobile').textContent = user.phone || user.mobile || '—';
+  document.getElementById('detail-vehicle').textContent = user.vehicleType || user.vehicle || 'Standard Fleet Transport';
+  document.getElementById('detail-vehicleno').textContent = user.vehicleNumber || '—';
+  document.getElementById('detail-permit').textContent = user.createdAt ? `Registered: ${formatDate(user.createdAt)}` : 'Standard Authority Clearance';
+
+  const statusEl = document.getElementById('detail-status');
+  const userStatus = (user.status || 'active').toLowerCase();
+  const isBlocked = userStatus === 'blocked' || userStatus === 'suspended';
+
+  if (isBlocked) {
+    statusEl.className = 'inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-error-container text-error font-label-caps text-label-caps uppercase font-bold shadow-sm';
+    statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Blocked';
+    deactivateBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>UNBLOCK / REINSTATE USER</span>';
+    deactivateBtn.className = 'w-full h-9 px-space-md rounded bg-secondary text-on-secondary hover:bg-secondary/90 font-title-sm text-title-sm font-semibold transition-colors flex items-center justify-center gap-space-xs shadow-sm';
+  } else {
+    statusEl.className = 'inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container text-secondary font-label-caps text-label-caps uppercase font-bold shadow-sm';
+    statusEl.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Active';
+    deactivateBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">person_off</span><span>DEACTIVATE / BLOCK USER</span>';
+    deactivateBtn.className = 'w-full h-9 px-space-md rounded bg-error-container text-error hover:bg-error hover:text-on-error font-title-sm text-title-sm font-semibold transition-colors flex items-center justify-center gap-space-xs shadow-sm';
+  }
+
+  // Load user reports count
+  const reportsCountEl = document.getElementById('detail-reports-count');
+  reportsCountEl.textContent = 'Loading submitted road reports...';
+  try {
+    const reports = await getUserReports(user.id);
+    reportsCountEl.textContent = `${reports.length} report(s) submitted to corridor control`;
+  } catch (err) {
+    reportsCountEl.textContent = 'No field reports found for this user';
+  }
+}
+
+function closeDrawer() {
+  selectedUser = null;
+  userDrawer.classList.add('hidden');
+  renderUsers();
+}
+
+btnCloseDrawer?.addEventListener('click', closeDrawer);
+btnCloseDrawer2?.addEventListener('click', closeDrawer);
+
+// Floating Toast Helper
+let toastTimeout = null;
+function showUserToast(title, message, isError = false) {
+  const toast = document.getElementById('user-action-toast');
+  const icon = document.getElementById('user-toast-icon');
+  const titleEl = document.getElementById('user-toast-title');
+  const msgEl = document.getElementById('user-toast-message');
+  if (!toast) return;
+
+  if (toastTimeout) clearTimeout(toastTimeout);
+
+  titleEl.textContent = title;
+  msgEl.textContent = message;
+
+  if (isError) {
+    icon.textContent = 'error';
+    icon.className = 'material-symbols-outlined text-error text-[24px] mt-0.5';
+    toast.className = 'fixed bottom-6 right-6 z-50 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-error/50 transition-all duration-300';
+  } else {
+    icon.textContent = 'check_circle';
+    icon.className = 'material-symbols-outlined text-secondary text-[24px] mt-0.5';
+    toast.className = 'fixed bottom-6 right-6 z-50 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-outline-variant transition-all duration-300';
+  }
+
+  toast.classList.remove('hidden');
+  toastTimeout = setTimeout(() => {
+    toast.classList.add('hidden');
+  }, 4500);
+}
+
+document.getElementById('close-user-toast')?.addEventListener('click', () => {
+  document.getElementById('user-action-toast')?.classList.add('hidden');
+});
+
+// Warning Modal Handlers
+const warningModal = document.getElementById('warningModal');
+const btnCloseWarningModal = document.getElementById('btnCloseWarningModal');
+const btnCancelWarning = document.getElementById('btnCancelWarning');
+const btnSubmitWarning = document.getElementById('btnSubmitWarning');
+const warningMessageText = document.getElementById('warningMessageText');
+
+function openWarningModal(user) {
+  if (!user) return;
+  document.getElementById('warn-target-avatar').textContent = getInitials(user.name || user.displayName);
+  document.getElementById('warn-target-name').textContent = user.name || user.displayName || 'Commercial Driver';
+  document.getElementById('warn-target-email').textContent = user.email || user.phone || '—';
+  document.getElementById('warn-target-vehicle').textContent = user.vehicleNumber || user.vehicleType || 'Fleet Transport';
+
+  warningMessageText.value = 'Notice: Please ensure strict compliance with posted speed and vehicle restriction directives.';
+  warningModal.classList.remove('hidden');
+}
+
+function closeWarningModal() {
+  warningModal?.classList.add('hidden');
+}
+
+btnCloseWarningModal?.addEventListener('click', closeWarningModal);
+btnCancelWarning?.addEventListener('click', closeWarningModal);
+
+document.querySelectorAll('.warn-preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const msg = btn.getAttribute('data-msg');
+    if (msg) warningMessageText.value = msg;
+  });
+});
+
+btnWarnUser?.addEventListener('click', () => {
+  if (!selectedUser) return;
+  openWarningModal(selectedUser);
+});
+
+btnSubmitWarning?.addEventListener('click', async () => {
+  if (!selectedUser) return;
+  const msg = warningMessageText.value.trim();
+  if (!msg) {
+    showUserToast('Message Required', 'Please enter a warning message to dispatch.', true);
+    return;
+  }
+
+  btnSubmitWarning.disabled = true;
+  const prevHtml = btnSubmitWarning.innerHTML;
+  btnSubmitWarning.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Dispatching...</span>';
+
+  try {
+    const targetUserId = selectedUser.id;
+    const targetUserName = selectedUser.name || selectedUser.displayName || selectedUser.email;
+    await warnUser(targetUserId, msg);
+    closeWarningModal();
+    showUserToast(
+      'Warning Dispatched',
+      `Official notice has been sent to ${targetUserName}'s notifications inbox.`
+    );
+  } catch (err) {
+    console.error('Failed to send warning:', err);
+    showUserToast('Dispatch Failed', err.message || 'Could not send warning.', true);
+  } finally {
+    btnSubmitWarning.disabled = false;
+    btnSubmitWarning.innerHTML = prevHtml;
+  }
+});
+
+// Status Change (Block/Unblock) Confirmation Modal Handlers
+const confirmStatusModal = document.getElementById('confirmStatusModal');
+const btnCancelStatusModal = document.getElementById('btnCancelStatusModal');
+const btnConfirmStatusAction = document.getElementById('btnConfirmStatusAction');
+const confirmStatusTitle = document.getElementById('confirmStatusTitle');
+const confirmStatusDesc = document.getElementById('confirmStatusDesc');
+const confirmStatusIcon = document.getElementById('confirmStatusIcon');
+const confirmStatusIconBox = document.getElementById('confirmStatusIconBox');
+const btnConfirmStatusIcon = document.getElementById('btnConfirmStatusIcon');
+const btnConfirmStatusText = document.getElementById('btnConfirmStatusText');
+
+let pendingAction = null; // 'block' or 'unblock'
+
+function openConfirmStatusModal(user) {
+  if (!user) return;
+  const userStatus = (user.status || 'active').toLowerCase();
+  const isBlocked = userStatus === 'blocked' || userStatus === 'suspended';
+  const userName = user.name || user.displayName || user.email || 'this user';
+
+  if (isBlocked) {
+    pendingAction = 'unblock';
+    confirmStatusTitle.textContent = 'Reinstate User Account';
+    confirmStatusDesc.textContent = `Are you sure you want to unblock and reinstate ${userName}? Their active driver access and corridor routing permissions will be restored.`;
+    confirmStatusIcon.textContent = 'check_circle';
+    confirmStatusIconBox.className = 'w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-secondary/15 text-secondary';
+    btnConfirmStatusAction.className = 'px-space-lg py-space-sm rounded bg-secondary text-on-secondary hover:bg-secondary/90 font-title-sm text-title-sm transition-colors shadow flex items-center gap-1.5';
+    btnConfirmStatusIcon.textContent = 'check';
+    btnConfirmStatusText.textContent = 'Reinstate Account';
+  } else {
+    pendingAction = 'block';
+    confirmStatusTitle.textContent = 'Deactivate & Block User';
+    confirmStatusDesc.textContent = `Are you sure you want to deactivate and block ${userName}? They will be immediately restricted from accessing driver features and route advisories.`;
+    confirmStatusIcon.textContent = 'person_off';
+    confirmStatusIconBox.className = 'w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-error-container text-error';
+    btnConfirmStatusAction.className = 'px-space-lg py-space-sm rounded bg-error text-on-error hover:bg-error/90 font-title-sm text-title-sm transition-colors shadow flex items-center gap-1.5';
+    btnConfirmStatusIcon.textContent = 'block';
+    btnConfirmStatusText.textContent = 'Deactivate / Block';
+  }
+
+  confirmStatusModal.classList.remove('hidden');
+}
+
+function closeConfirmStatusModal() {
+  confirmStatusModal?.classList.add('hidden');
+  pendingAction = null;
+}
+
+btnCancelStatusModal?.addEventListener('click', closeConfirmStatusModal);
+
+deactivateBtn?.addEventListener('click', () => {
+  if (!selectedUser) return;
+  openConfirmStatusModal(selectedUser);
+});
+
+btnConfirmStatusAction?.addEventListener('click', async () => {
+  if (!selectedUser || !pendingAction) return;
+
+  btnConfirmStatusAction.disabled = true;
+  const prevHtml = btnConfirmStatusAction.innerHTML;
+  btnConfirmStatusAction.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Updating...</span>';
+
+  try {
+    const targetUserId = selectedUser.id;
+    const targetUserName = selectedUser.name || selectedUser.displayName || selectedUser.email;
+
+    if (pendingAction === 'unblock') {
+      await unblockUser(targetUserId);
+      selectedUser.status = 'active';
+      const idx = allUsers.findIndex(u => u.id === targetUserId);
+      if (idx !== -1) allUsers[idx].status = 'active';
+
+      closeConfirmStatusModal();
+      openDrawerForUser(selectedUser);
+      renderUsers();
+      showUserToast('Account Reinstated', `${targetUserName} has been successfully unblocked and reinstated.`);
+    } else {
+      await blockUser(targetUserId);
+      selectedUser.status = 'blocked';
+      const idx = allUsers.findIndex(u => u.id === targetUserId);
+      if (idx !== -1) allUsers[idx].status = 'blocked';
+
+      closeConfirmStatusModal();
+      openDrawerForUser(selectedUser);
+      renderUsers();
+      showUserToast('Account Deactivated', `${targetUserName} has been deactivated and blocked.`);
+    }
+  } catch (err) {
+    console.error('Status change error:', err);
+    showUserToast('Action Failed', err.message || 'Failed to update user status.', true);
+  } finally {
+    btnConfirmStatusAction.disabled = false;
+    btnConfirmStatusAction.innerHTML = prevHtml;
+  }
+});
+
+btnExportUsers?.addEventListener('click', () => {
+  if (allUsers.length === 0) {
+    alert('No users loaded to export.');
+    return;
+  }
+  const exportData = allUsers.map(u => ({
+    ID: u.id,
+    Name: u.name || u.displayName || '—',
+    Role: u.role || 'driver',
+    Email: u.email || '—',
+    Phone: u.phone || u.mobile || '—',
+    VehicleType: u.vehicleType || u.vehicle || '—',
+    VehicleNumber: u.vehicleNumber || '—',
+    Status: u.status || 'active',
+    CreatedAt: u.createdAt ? formatDate(u.createdAt) : '—'
+  }));
+  exportToCSV(exportData, `transitclear-users-${new Date().toISOString().slice(0,10)}.csv`);
+});
+
+btnResetFilters?.addEventListener('click', () => {
+  searchInput.value = '';
+  roleFilter.value = '';
+  statusFilter.value = '';
+  renderUsers();
+});
+
+searchInput?.addEventListener('input', renderUsers);
+roleFilter?.addEventListener('change', renderUsers);
+statusFilter?.addEventListener('change', renderUsers);
+
+// Subscribe to live Firestore users collection
+onUsersSnapshot((users) => {
+  allUsers = users;
+  renderUsers();
+  if (selectedUser) {
+    const updated = allUsers.find(u => u.id === selectedUser.id);
+    if (updated) {
+      selectedUser = updated;
+      openDrawerForUser(updated);
+    }
+  }
+});
+</script>
+</main></div>
+</body></html>

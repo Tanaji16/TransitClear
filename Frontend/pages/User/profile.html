@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitClear — Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-icon">
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+          <div>
+            <div class="brand-title">TRANSITCLEAR</div>
+            <div class="brand-subtitle">Travel & Safety Portal</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="home.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">home</span>
+              <span>Home</span>
+            </div>
+          </a>
+          <a class="nav-link" href="journey.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">map</span>
+              <span>My Journey</span>
+            </div>
+          </a>
+          <a class="nav-link" href="alerts.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">notifications</span>
+              <span>Alerts</span>
+            </div>
+            <span class="nav-badge-dot"></span>
+          </a>
+          <a class="nav-link" href="report-problem.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">warning</span>
+              <span>Report Problem</span>
+            </div>
+          </a>
+          <a class="nav-link active" href="profile.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">person</span>
+              <span>Profile</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="emergency-helpline-box">
+          <div class="emergency-label">
+            <span class="material-symbols-outlined text-[16px]">emergency</span>
+            <span>Emergency Helpline</span>
+          </div>
+          <div class="emergency-numbers">
+            <span class="emergency-phone">1033 / 112</span>
+            <span class="emergency-authority">NHAI • Police</span>
+          </div>
+          <p class="emergency-sub">24x7 Roadside Hazard & Medical Assistance</p>
+        </div>
+
+        <button type="button" class="sidebar-logout-btn" onclick="handleAppLogout()" title="Sign out of TransitClear">
+          <span class="material-symbols-outlined text-[18px]">logout</span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="app-header">
+        <div class="header-left">
+          <span class="material-symbols-outlined text-[28px]" style="color: var(--color-primary-navy);">traffic</span>
+          <div class="header-divider"></div>
+          <div>
+            <div class="header-brand-name">TransitClear</div>
+            <div class="header-brand-tagline">Road Restriction & Travel Safety</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active">English</button>
+            <button type="button" class="lang-btn">हिंदी</button>
+            <button type="button" class="lang-btn">मराठी</button>
+          </div>
+
+          <a href="alerts.html" class="icon-button" aria-label="View notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-badge"></span>
+          </a>
+
+          <a href="profile.html" class="driver-pill" style="text-decoration: none; color: inherit;">
+            <div class="driver-avatar">RK</div>
+            <div class="driver-info">
+              <span class="driver-name">Rajesh K.</span>
+              <span class="driver-plate">MH-04-AB-1234</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-view active" style="display: block;">
+        <section class="screen-header">
+          <div class="screen-tag">
+            <span>Driver Console • Account</span>
+          </div>
+          <h1 class="screen-title">Profile</h1>
+          <p class="screen-subtitle">Manage your account and preferences.</p>
+        </section>
+
+        <!-- Driver Hero Card -->
+        <section class="content-card" style="flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center; gap: 18px;">
+            <div id="profile-hero-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-xl); background-color: var(--color-primary-navy); color: #ffffff; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); cursor: pointer; overflow: hidden; position: relative;" title="Click to upload profile photo">
+              RK
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 id="profile-hero-name" style="font-size: 20px; font-weight: 800; color: var(--color-text-primary);">Rajesh Kumar</h2>
+                <span class="badge-tag" style="background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">
+                  Commercial Heavy Driver
+                </span>
+              </div>
+              <div id="profile-hero-details" style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--color-text-muted); margin-top: 6px;">
+                <span>📞 +91 98765 43210</span>
+                <span>•</span>
+                <span>🚛 Heavy Truck • MH-04-AB-1234</span>
+              </div>
+              <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-emerald-clear);"></span>
+                <span>VRL Logistics Fleet • Mumbai Division</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background-color: var(--color-surface-low); padding: 10px 16px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); text-align: right;">
+            <span class="metric-label">Driver Status</span>
+            <div style="font-size: 12px; font-weight: 800; color: var(--color-emerald-clear); background-color: #d1fae5; padding: 2px 8px; border-radius: 4px; margin-top: 4px;">
+              Active & Verified
+            </div>
+          </div>
+        </section>
+
+        <!-- Two-Column Grid: Personal Details & My Vehicle -->
+        <div class="two-col-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 24px;">
+          <!-- Personal Details -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 12px;">
+              <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted);">Personal Details</h3>
+              <span style="font-size: 12px; color: var(--color-text-muted);">Primary info</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <span class="metric-label">Full Name</span>
+                <div id="driver-full-name" style="font-size: 15px; font-weight: 700; color: var(--color-text-primary); margin-top: 2px;">Rajesh Kumar</div>
+              </div>
+              <div>
+                <span class="metric-label">Mobile Number</span>
+                <div id="driver-phone-num" style="font-size: 15px; font-weight: 700; color: var(--color-text-primary); margin-top: 2px;">+91 98765 43210</div>
+              </div>
+              <div>
+                <span class="metric-label">Display Language</span>
+                <div style="margin-top: 4px;">
+                  <div class="lang-switcher">
+                    <button type="button" class="lang-btn active">English</button>
+                    <button type="button" class="lang-btn">हिंदी</button>
+                    <button type="button" class="lang-btn">मराठी</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-outline-48" style="margin-top: 10px; width: 100%;" onclick="openEditPersonalModal()">
+              <span class="material-symbols-outlined text-[18px]">edit</span>
+              <span>EDIT DETAILS</span>
+            </button>
+          </div>
+
+          <!-- My Vehicle -->
+          <div class="content-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 12px;">
+              <h3 style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted);">My Vehicle</h3>
+              <span style="font-size: 12px; color: var(--color-text-muted);">Active registration</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <span class="metric-label">Vehicle Type</span>
+                <div id="driver-vehicle-type" style="font-size: 15px; font-weight: 700; color: var(--color-text-primary); margin-top: 2px;">Heavy Truck (6-Axle Rigid Trailer)</div>
+              </div>
+              <div>
+                <span class="metric-label">Vehicle Number</span>
+                <div id="driver-vehicle-num" style="font-size: 14px; font-weight: 800; font-family: monospace; background-color: var(--color-surface-low); border: 1px solid var(--color-border-subtle); padding: 4px 10px; border-radius: 4px; display: inline-block; margin-top: 4px;">
+                  MH-04-AB-1234
+                </div>
+              </div>
+              <div>
+                <span class="metric-label">FASTag Status</span>
+                <div style="margin-top: 4px;">
+                  <span class="badge-tag green" style="padding: 4px 10px; font-size: 11px;">
+                    <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-emerald-clear);"></span>
+                    Active & Linked
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-outline-48" style="margin-top: 10px; width: 100%;" onclick="openEditVehicleModal()">
+              <span class="material-symbols-outlined text-[18px]">sync_alt</span>
+              <span>EDIT VEHICLE</span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../../env.js"></script>
+  <script type="module" src="../../auth-guard.js"></script>
+  <script type="module" src="../../i18n.js"></script>
+  <script src="../../mockData.js"></script>
+  <script src="../../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitClear — Report Road Problem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-icon">
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+          <div>
+            <div class="brand-title">TRANSITCLEAR</div>
+            <div class="brand-subtitle">Travel & Safety Portal</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="home.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">home</span>
+              <span>Home</span>
+            </div>
+          </a>
+          <a class="nav-link" href="journey.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">map</span>
+              <span>My Journey</span>
+            </div>
+          </a>
+          <a class="nav-link" href="alerts.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">notifications</span>
+              <span>Alerts</span>
+            </div>
+            <span class="nav-badge-dot"></span>
+          </a>
+          <a class="nav-link active" href="report-problem.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">warning</span>
+              <span>Report Problem</span>
+            </div>
+          </a>
+          <a class="nav-link" href="profile.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">person</span>
+              <span>Profile</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="emergency-helpline-box">
+          <div class="emergency-label">
+            <span class="material-symbols-outlined text-[16px]">emergency</span>
+            <span>Emergency Helpline</span>
+          </div>
+          <div class="emergency-numbers">
+            <span class="emergency-phone">1033 / 112</span>
+            <span class="emergency-authority">NHAI • Police</span>
+          </div>
+          <p class="emergency-sub">24x7 Roadside Hazard & Medical Assistance</p>
+        </div>
+
+        <button type="button" class="sidebar-logout-btn" onclick="handleAppLogout()" title="Sign out of TransitClear">
+          <span class="material-symbols-outlined text-[18px]">logout</span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="app-header">
+        <div class="header-left">
+          <span class="material-symbols-outlined text-[28px]" style="color: var(--color-primary-navy);">traffic</span>
+          <div class="header-divider"></div>
+          <div>
+            <div class="header-brand-name">TransitClear</div>
+            <div class="header-brand-tagline">Road Restriction & Travel Safety</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active">English</button>
+            <button type="button" class="lang-btn">हिंदी</button>
+            <button type="button" class="lang-btn">मराठी</button>
+          </div>
+
+          <a href="alerts.html" class="icon-button" aria-label="View notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-badge"></span>
+          </a>
+
+          <a href="profile.html" class="driver-pill" style="text-decoration: none; color: inherit;">
+            <div class="driver-avatar">RK</div>
+            <div class="driver-info">
+              <span class="driver-name">Rajesh K.</span>
+              <span class="driver-plate">MH-04-AB-1234</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-view active" style="display: block;">
+        <section class="screen-header">
+          <div class="screen-tag">
+            <span>Driver Console • Road Hazards</span>
+          </div>
+          <h1 class="screen-title">Report Road Problem</h1>
+          <p class="screen-subtitle">See a problem on the road? Report it so the concerned authority can verify it.</p>
+        </section>
+
+        <!-- Feedback Banner -->
+        <div class="status-confirmation-banner hidden" id="reportSuccessBanner">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="width: 26px; height: 26px; border-radius: 50%; background-color: var(--color-emerald-clear); color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0;">✓</div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h4 style="font-size: 14px; font-weight: 800; color: #064e3b; text-transform: uppercase;">REPORT SUBMITTED & QUEUED</h4>
+                <span style="font-size: 11px; font-family: monospace; font-weight: 700; background-color: #a7f3d0; color: #065f46; padding: 2px 8px; border-radius: 4px;">Report ID: TC-10452</span>
+              </div>
+              <p style="font-size: 13px; color: #047857; margin-top: 4px;">
+                Thank you for helping improve road safety. Your report has been sent for verification.
+              </p>
+              <p style="font-size: 12px; color: #065f46; margin-top: 2px;">
+                ℹ️ Your report is not an official restriction. It will be verified by the concerned highway authority.
+              </p>
+            </div>
+          </div>
+          <button type="button" class="btn-outline-48" id="dismissBannerBtn" style="height: 36px; padding: 0 12px; font-size: 12px;">Dismiss</button>
+        </div>
+
+        <!-- Multi-Step Report Form Card -->
+        <div class="content-card" style="padding: 32px;">
+          <!-- STEP 1: What is the problem -->
+          <section>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge-tag" style="background-color: var(--color-primary-navy); color: #ffffff; font-size: 11px;">STEP 1</span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">WHAT IS THE PROBLEM?</h3>
+            </div>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px;">Select the issue you observed on your route:</p>
+
+            <div class="problem-types-grid" id="problemTypesGrid">
+              <div class="problem-card active" data-type="road_blocked">
+                <span class="problem-icon">🚧</span>
+                <span class="problem-name">Road Blocked</span>
+                <span class="problem-desc">Route completely impassable</span>
+                <span class="problem-check-badge">✓</span>
+              </div>
+              <div class="problem-card" data-type="accident">
+                <span class="problem-icon">🚗</span>
+                <span class="problem-name">Accident</span>
+                <span class="problem-desc">Crash or overturned vehicle</span>
+              </div>
+              <div class="problem-card" data-type="flooding">
+                <span class="problem-icon">🌊</span>
+                <span class="problem-name">Flooding / Water</span>
+                <span class="problem-desc">Waterlogging or submerged road</span>
+              </div>
+              <div class="problem-card" data-type="road_damage">
+                <span class="problem-icon">🛣️</span>
+                <span class="problem-name">Road Damage</span>
+                <span class="problem-desc">Potholes, cave-in or debris</span>
+              </div>
+              <div class="problem-card" data-type="blocking_truck">
+                <span class="problem-icon">🚛</span>
+                <span class="problem-name">Vehicle Breakdown</span>
+                <span class="problem-desc">Stationary vehicle in lane</span>
+              </div>
+              <div class="problem-card" data-type="other">
+                <span class="problem-icon">⚠️</span>
+                <span class="problem-name">Other Hazard</span>
+                <span class="problem-desc">Fallen trees, livestock, etc.</span>
+              </div>
+            </div>
+          </section>
+
+          <hr style="border: none; border-top: 1px solid var(--color-border-subtle); margin: 8px 0;" />
+
+          <!-- STEP 2: Location -->
+          <section>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge-tag" style="background-color: var(--color-primary-navy); color: #ffffff; font-size: 11px;">STEP 2</span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">LOCATION</h3>
+            </div>
+
+            <div style="background-color: var(--color-surface-low); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); padding: 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;">
+                <div>
+                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                    <span class="metric-label">📍 INCIDENT LOCATION</span>
+                    <span class="badge-tag green" style="padding: 2px 8px; font-size: 10px;">
+                      <span class="pulse-dot" style="background-color: var(--color-emerald-clear);"></span> Live Map Picker
+                    </span>
+                  </div>
+                  <div style="font-size: 15px; font-weight: 800; color: var(--color-text-primary);" id="detectedLocationText">
+                    Location detected automatically: NH 48, near Shirwal (KM 58.4 • Pune-Satara Section)
+                  </div>
+                  <span style="font-size: 12px; color: var(--color-text-muted);">
+                    Click on the map or drag the marker to pinpoint the exact location.
+                  </span>
+                </div>
+
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <button type="button" class="btn-outline-48" style="height: 38px; font-size: 12px; padding: 0 14px;" onclick="useCurrentLocationForReport()">
+                    <span class="material-symbols-outlined text-[16px]">my_location</span>
+                    <span>USE CURRENT LOCATION</span>
+                  </button>
+                  <button type="button" class="btn-outline-48" style="height: 38px; font-size: 12px; padding: 0 14px;" onclick="alert('Click anywhere on the map below or drag the marker!')">
+                    <span class="material-symbols-outlined text-[16px]">pin_drop</span>
+                    <span>CHOOSE FROM MAP</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Incident Map -->
+              <div id="report-problem-map" style="height: 220px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); z-index: 1;"></div>
+            </div>
+          </section>
+
+          <hr style="border: none; border-top: 1px solid var(--color-border-subtle); margin: 8px 0;" />
+
+          <!-- STEP 3: Add Photo (Optional) -->
+          <section>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge-tag" style="background-color: var(--color-primary-navy); color: #ffffff; font-size: 11px;">STEP 3</span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">PHOTO</h3>
+              <span style="font-size: 13px; color: var(--color-text-muted);">(Optional)</span>
+            </div>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px;">
+              A clear photo helps authorities verify the problem faster and dispatch highway patrol.
+            </p>
+
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+              <input type="file" id="reportPhotoInput" accept="image/*" style="display: none;" />
+              <button type="button" class="btn-outline-48" onclick="document.getElementById('reportPhotoInput').click()">
+                <span>📷 TAKE PHOTO</span>
+              </button>
+              <button type="button" class="btn-outline-48" onclick="document.getElementById('reportPhotoInput').click()">
+                <span>📁 UPLOAD PHOTO</span>
+              </button>
+              <span id="photoStatusLabel" style="font-size: 12px; color: var(--color-text-muted); font-style: italic;">
+                No file selected yet
+              </span>
+            </div>
+          </section>
+
+          <hr style="border: none; border-top: 1px solid var(--color-border-subtle); margin: 8px 0;" />
+
+          <!-- STEP 4: Description (Optional) -->
+          <section>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge-tag" style="background-color: var(--color-primary-navy); color: #ffffff; font-size: 11px;">STEP 4</span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">DESCRIPTION</h3>
+              <span style="font-size: 13px; color: var(--color-text-muted);">(Optional)</span>
+            </div>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px;">
+              Tell us briefly what happened or give details that could help other drivers:
+            </p>
+            <textarea id="reportDescriptionInput" class="form-input" style="height: auto; padding: 14px; border-radius: var(--radius-xl);" rows="3" placeholder="Example: Road is blocked by a broken-down truck near the bridge. Single lane open with slow movement."></textarea>
+          </section>
+
+          <!-- Form Submission Footer -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border-subtle); padding-top: 20px; flex-wrap: wrap; gap: 14px;">
+            <div style="font-size: 12px; color: var(--color-text-muted); display: flex; align-items: center; gap: 6px;">
+              <span>🛡️</span> All reports are tagged with vehicle MH-04-AB-1234 & driver ID.
+            </div>
+            <button type="button" class="btn-primary-56" id="submitReportBtn" onclick="submitProblemReportToAdmin()">
+              <span>🚀 SUBMIT REPORT</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Status Tracking Section for Driver -->
+        <section class="content-card" style="margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined text-[24px]" style="color: var(--color-primary-navy);">track_changes</span>
+                <h2 style="font-size: 18px; font-weight: 800; color: var(--color-text-primary);">My Reported Incidents & Live Tracking</h2>
+              </div>
+              <p style="font-size: 13px; color: var(--color-text-muted); margin-top: 4px;">
+                Track live review, authority verification, and alert broadcast status of your submitted road problems.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 6px 12px; border-radius: 999px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+              <span style="font-size: 11px; font-weight: 800; color: #047857; letter-spacing: 0.5px;">REAL-TIME SYNC</span>
+            </div>
+          </div>
+
+          <div id="driver-reports-list" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+            <div style="padding: 24px; text-align: center; color: var(--color-text-muted); font-size: 13px;">
+              Loading your incident submissions...
+            </div>
+          </div>
+        </section>
+
+        <!-- Emergency Helpline Banner -->
+        <div style="background-color: #fffbeb; border: 1px solid #fef3c7; border-radius: var(--radius-xl); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; margin-top: 24px; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="material-symbols-outlined text-[26px]" style="color: var(--color-warning-amber);">emergency</span>
+            <div>
+              <span class="metric-label" style="color: #92400e;">LIFE-THREATENING EMERGENCY ON THE HIGHWAY?</span>
+              <p style="font-size: 13px; color: #78350f;">Call immediately for ambulance and emergency patrol service.</p>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <span class="metric-label" style="color: #92400e;">NHAI Helpline</span>
+            <div style="font-size: 20px; font-weight: 800; color: #78350f;">1033 / 112</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../../env.js"></script>
+  <script type="module" src="../../auth-guard.js"></script>
+  <script type="module" src="../../journey-maps.js"></script>
+  <script type="module" src="../../i18n.js"></script>
+  <script src="../../mockData.js"></script>
+  <script src="../../app.js"></script>
+  <script type="module">
+    import { createRoadProblem, compressImage, onRoadProblemsSnapshot } from '../../admin-firebase.js';
+    import { auth, db, doc, getDoc } from '../../firebase-config.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+    let currentUser = null;
+    let userProfile = null;
+    let currentProblemsList = [];
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        currentUser = user;
+        const snap = await getDoc(doc(db, 'users', user.uid));
+        userProfile = snap.exists() ? snap.data() : {};
+        // Update header with real user data
+        const driverName = document.querySelector('.driver-name');
+        const driverPlate = document.querySelector('.driver-plate');
+        const driverAvatar = document.querySelector('.driver-avatar');
+        if (driverName) driverName.textContent = (userProfile.name || user.displayName || 'Driver').split(' ').map((n,i) => i===0 ? n : n[0]+'.').join(' ');
+        if (driverPlate) driverPlate.textContent = userProfile.vehicleNumber || '';
+        if (driverAvatar) driverAvatar.textContent = (userProfile.name || 'D')[0].toUpperCase();
+        renderMyReports(currentProblemsList);
+      }
+    });
+
+    // Real-time live status tracking for driver's submitted hazards
+    onRoadProblemsSnapshot((allProblems) => {
+      currentProblemsList = allProblems;
+      renderMyReports(allProblems);
+    });
+
+    function renderMyReports(allProblems) {
+      const container = document.getElementById('driver-reports-list');
+      if (!container) return;
+      const myIds = JSON.parse(localStorage.getItem('tc_my_report_ids') || '[]');
+      const uid = currentUser?.uid;
+
+      const myProblems = allProblems.filter(p => {
+        return (uid && (p.userId === uid || p.driverUid === uid)) || myIds.includes(p.id);
+      });
+
+      if (myProblems.length === 0) {
+        container.innerHTML = `
+          <div style="padding: 24px; text-align: center; color: var(--color-text-muted); font-size: 13px; background: var(--color-surface-low, #f8fafc); border-radius: 8px;">
+            <span>No reports submitted yet. When you report a road problem above, track its review and alert status here in real time.</span>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = myProblems.map(p => {
+        const status = p.status || 'pending';
+        let badgeHtml = '';
+        let statusDesc = '';
+
+        if (status === 'verified') {
+          badgeHtml = `<span style="background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #15803d;"></span>
+            ACCEPTED & BROADCASTED (SUCCESSFUL)
+          </span>`;
+          statusDesc = `<p style="font-size: 12px; color: #166534; margin: 4px 0 0 0; font-weight: 600;">
+            ✓ Verified by Highway Authority • Official route alert transmitted to all drivers on this corridor!
+          </p>`;
+        } else if (status === 'rejected') {
+          const reasonText = p.rejectionReason || 'Unsubstantiated or incorrect report details.';
+          badgeHtml = `<span style="background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #b91c1c;"></span>
+            REJECTED BY AUTHORITY
+          </span>`;
+          statusDesc = `
+            <div style="margin-top: 6px; padding: 8px 12px; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px;">
+              <span style="font-size: 11px; font-weight: 800; color: #9f1239; text-transform: uppercase;">Authority Action Taken:</span>
+              <p style="font-size: 12px; color: #881337; margin: 2px 0 0 0; font-weight: 600;">
+                ❌ ${reasonText}
+              </p>
+            </div>
+          `;
+        } else {
+          badgeHtml = `<span style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #92400e;"></span>
+            PENDING VERIFICATION
+          </span>`;
+          statusDesc = `<p style="font-size: 12px; color: #b45309; margin: 4px 0 0 0; font-weight: 600;">
+            ⏳ Awaiting patrol inspection at reported highway location.
+          </p>`;
+        }
+
+        return `
+          <div style="background: #ffffff; border: 1px solid var(--color-border-subtle, #e2e8f0); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 14px; font-weight: 800; color: var(--color-text-primary);">🚨 ${p.problemType || 'Road Hazard'}</span>
+                  <span style="font-size: 11px; font-family: monospace; color: var(--color-text-muted); background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">ID: ${p.id.substring(0, 8).toUpperCase()}</span>
+                </div>
+                <div style="font-size: 13px; font-weight: 600; color: var(--color-text-primary); margin-top: 4px;">📍 ${p.location || 'Reported highway location'}</div>
+              </div>
+              <div>${badgeHtml}</div>
+            </div>
+            ${p.description ? `<p style="font-size: 12px; color: var(--color-text-muted); margin: 0; line-height: 1.4;">"${p.description}"</p>` : ''}
+            ${statusDesc}
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.submitProblemReportToAdmin = async function() {
+      const btn = document.getElementById('submitReportBtn');
+      if (btn) { btn.disabled = true; btn.innerHTML = '<span>⏳ SUBMITTING...</span>'; }
+      try {
+        // Get selected problem type
+        const activeCard = document.querySelector('.problem-card.active');
+        const problemType = activeCard ? (activeCard.querySelector('.problem-name')?.textContent || activeCard.dataset.type) : 'Other';
+
+        // Get location
+        const locationText = document.getElementById('detectedLocationText')?.textContent?.replace('Location detected automatically: ', '').trim() || 'Unknown location';
+
+        // Get description
+        const description = document.getElementById('reportDescriptionInput')?.value?.trim() || '';
+
+        // Get photo if available
+        let photoBase64 = '';
+        const photoInput = document.getElementById('reportPhotoInput');
+        if (photoInput && photoInput.files && photoInput.files[0]) {
+          photoBase64 = await compressImage(photoInput.files[0], 600, 0.6);
+        }
+
+        // Get map coordinates if available
+        let lat = null, lng = null;
+        if (window._reportMarker) {
+          const latlng = window._reportMarker.getLatLng();
+          lat = latlng.lat;
+          lng = latlng.lng;
+        }
+
+        const reportData = {
+          problemType,
+          location: locationText,
+          description,
+          photo: photoBase64,
+          lat, lng,
+          userId: currentUser?.uid || auth.currentUser?.uid || 'anonymous',
+          driverUid: currentUser?.uid || auth.currentUser?.uid || 'anonymous',
+          reporterName: userProfile?.name || currentUser?.displayName || 'Anonymous',
+          reporterVehicle: userProfile?.vehicleNumber || '',
+          reporterPhone: userProfile?.phone || ''
+        };
+
+        const reportId = await createRoadProblem(reportData);
+
+        // Store ID in localStorage for persistent driver tracking
+        const submittedIds = JSON.parse(localStorage.getItem('tc_my_report_ids') || '[]');
+        if (!submittedIds.includes(reportId)) {
+          submittedIds.unshift(reportId);
+          localStorage.setItem('tc_my_report_ids', JSON.stringify(submittedIds));
+        }
+
+        // Show success banner
+        const banner = document.getElementById('reportSuccessBanner');
+        const reportIdSpan = banner?.querySelector('span[style*="monospace"]');
+        if (reportIdSpan) reportIdSpan.textContent = 'Report ID: ' + reportId.substring(0, 8).toUpperCase();
+        if (banner) { banner.classList.remove('hidden'); banner.scrollIntoView({ behavior: 'smooth' }); }
+
+        // Reset form
+        if (photoInput) photoInput.value = '';
+        const photoLabel = document.getElementById('photoStatusLabel');
+        if (photoLabel) { photoLabel.textContent = 'No file selected yet'; photoLabel.style.color = ''; photoLabel.style.fontWeight = ''; }
+        const descInput = document.getElementById('reportDescriptionInput');
+        if (descInput) descInput.value = '';
+
+        // Refresh list
+        renderMyReports(currentProblemsList);
+
+      } catch (err) {
+        console.error('Report submission failed:', err);
+        alert('Failed to submit report: ' + err.message);
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerHTML = '<span>🚀 SUBMIT REPORT</span>'; }
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Environment & Secrets
+.env
+.env*.local
+Frontend/env.js
+*serviceAccount*.json
+
+# Dependencies
+node_modules/
+
+# Firebase & NPM logs
+firebase-debug.log*
+firestore-debug.log*
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Obsidian
+.obsidian/

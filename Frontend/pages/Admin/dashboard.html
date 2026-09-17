@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitClear — Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body class="admin-body">
+  <!-- Left Navigation Shelf (Fixed 256px) -->
+  <aside class="admin-sidebar">
+    <div>
+      <div class="admin-brand-section">
+        <div class="admin-brand-header">
+          <div class="admin-brand-icon">
+            <span class="material-symbols-outlined" style="font-size: 18px;">traffic</span>
+          </div>
+          <span class="admin-brand-title">TransitClear</span>
+        </div>
+        <div class="admin-brand-sub">
+          <span class="admin-status-dot-pulse"></span>
+          <span class="admin-brand-subtitle">Operations Control</span>
+        </div>
+      </div>
+
+      <div class="admin-nav-heading">Main Navigation</div>
+      <nav class="admin-nav-list">
+        <a class="admin-nav-link active" href="dashboard.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">grid_view</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="admin-nav-link" href="restrictions.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">construction</span>
+          <span>Restrictions</span>
+        </a>
+        <a class="admin-nav-link" href="road-problems.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">warning</span>
+          <span>Road Problems</span>
+        </a>
+        <a class="admin-nav-link" href="affected-journeys.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">local_shipping</span>
+          <span>Affected Journeys</span>
+        </a>
+        <a class="admin-nav-link" href="users.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">group</span>
+          <span>Users</span>
+        </a>
+        <a class="admin-nav-link" href="reports.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">bar_chart</span>
+          <span>Reports</span>
+        </a>
+      </nav>
+    </div>
+
+    <div>
+      <div class="admin-sidebar-divider"></div>
+      <nav class="admin-nav-list" style="padding-bottom: 24px;">
+        <a class="admin-nav-link" href="settings.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+          <span>Settings</span>
+        </a>
+        <a class="admin-nav-link" href="admin-profile.html">
+          <span class="material-symbols-outlined" style="font-size: 20px;">account_circle</span>
+          <span>Admin Profile</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Console Area -->
+  <div class="admin-main-wrapper">
+    <!-- Top Command Header -->
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <span class="admin-header-brand">TransitClear</span>
+        <span class="admin-header-sep">|</span>
+        <div class="admin-authority-badge">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: #0051d5;">shield</span>
+          <span>Authority: Maharashtra Traffic Control</span>
+        </div>
+      </div>
+
+      <div class="admin-header-right">
+        <button type="button" class="admin-notify-btn" aria-label="Notifications" id="notifyBtn">
+          <span class="material-symbols-outlined" style="font-size: 22px;">notifications</span>
+          <span class="admin-notify-badge" id="notifyBadge"></span>
+        </button>
+
+        <a href="admin-profile.html" class="admin-user-profile-menu">
+          <div class="admin-avatar" id="adminAvatarDash">
+            <span class="material-symbols-outlined" style="font-size: 18px;">person</span>
+          </div>
+          <div class="admin-user-meta">
+            <div class="admin-user-name">
+              <span id="adminNameDash">Admin</span>
+              <span class="material-symbols-outlined" style="font-size: 16px; color: #64748b;">arrow_drop_down</span>
+            </div>
+            <span class="admin-user-role" id="adminRoleDash">Chief Controller</span>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <!-- Canvas -->
+    <main class="admin-content-canvas">
+      <!-- Page Title & Status Row -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <div class="admin-page-title-row" style="margin-bottom: 0;">
+          <div class="admin-page-title-line">
+            <h1 class="admin-title-h1">Dashboard</h1>
+            <span class="admin-desk-pill">Live Desk 04</span>
+          </div>
+          <p class="admin-page-subtitle">Monitor active restrictions, road problems and affected journeys.</p>
+        </div>
+
+        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 4px; background-color: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+          <span class="admin-status-dot-pulse" style="background-color: #059669;"></span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #0b1c30;">
+            System Status: Online
+          </span>
+        </div>
+      </div>
+
+      <!-- 1. KPI SUMMARY CARDS -->
+      <div class="admin-kpi-grid">
+        <div class="admin-kpi-card rail-red">
+          <div class="admin-kpi-header">
+            <span class="admin-kpi-title">Active Restrictions</span>
+            <span class="material-symbols-outlined" style="color: #dc2626; font-size: 20px;">construction</span>
+          </div>
+          <div class="admin-kpi-number" id="kpi-active-restrictions">0</div>
+          <div class="admin-kpi-footer">
+            <span class="material-symbols-outlined" style="font-size: 15px;">alt_route</span>
+            <span>Currently active</span>
+          </div>
+        </div>
+        <div class="admin-kpi-card rail-light-blue">
+          <div class="admin-kpi-header">
+            <span class="admin-kpi-title">Starting Soon</span>
+            <span class="material-symbols-outlined" style="color: #316bf3; font-size: 20px;">schedule</span>
+          </div>
+          <div class="admin-kpi-number" id="kpi-starting-soon">0</div>
+          <div class="admin-kpi-footer">
+            <span class="material-symbols-outlined" style="font-size: 15px;">timer</span>
+            <span>Upcoming restrictions</span>
+          </div>
+        </div>
+        <div class="admin-kpi-card rail-blue">
+          <div class="admin-kpi-header">
+            <span class="admin-kpi-title">Affected Journeys</span>
+            <span class="material-symbols-outlined" style="color: #0051d5; font-size: 20px;">local_shipping</span>
+          </div>
+          <div class="admin-kpi-number" id="kpi-affected-journeys">0</div>
+          <div class="admin-kpi-footer">
+            <span class="material-symbols-outlined" style="font-size: 15px;">flag</span>
+            <span>Journeys affected</span>
+          </div>
+        </div>
+        <div class="admin-kpi-card rail-salmon">
+          <div class="admin-kpi-header">
+            <span class="admin-kpi-title">Reports to Verify</span>
+            <span class="material-symbols-outlined" style="color: #dc2626; font-size: 20px;">warning</span>
+          </div>
+          <div class="admin-kpi-number" id="kpi-reports-verify">0</div>
+          <div class="admin-kpi-footer" style="color: #dc2626; font-weight: 600;">
+            <span class="material-symbols-outlined" style="font-size: 15px;">notification_important</span>
+            <span>Awaiting verification</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ACTIVE RESTRICTIONS DATA TABLE -->
+      <section class="admin-panel">
+        <div class="admin-panel-header">
+          <div>
+            <h2 class="admin-panel-heading">Active Restrictions</h2>
+            <p class="admin-panel-sub">Currently active traffic restrictions along monitored corridors</p>
+          </div>
+          <button type="button" class="admin-btn-primary" id="openCreateModalBtn">
+            <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+            <span>CREATE RESTRICTION</span>
+          </button>
+        </div>
+
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Restriction</th>
+                <th>Location</th>
+                <th>Affected Vehicles</th>
+                <th>Time Window</th>
+                <th style="text-align: center;">Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="restrictionsTableBody">
+              <tr id="loadingRow"><td colspan="6" style="text-align:center;padding:24px;color:#64748b;">Loading restrictions...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. LOWER TWO-COLUMN OPERATIONAL GRID -->
+      <div class="admin-two-column-grid">
+        <!-- Left: ROAD PROBLEMS TO VERIFY -->
+        <section class="admin-panel" style="margin-bottom: 0;">
+          <div class="admin-panel-header">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h2 class="admin-panel-heading">ROAD PROBLEMS TO VERIFY</h2>
+                <span id="pendingBadge" style="padding: 2px 8px; border-radius: 4px; background-color: #ffdad6; color: #93000a; font-size: 11px; font-weight: 700;">0 Pending</span>
+              </div>
+              <p class="admin-panel-sub" id="pendingSubtext">Unverified driver submissions requiring controller sign-off</p>
+            </div>
+            <a href="road-problems.html" class="admin-btn-view-all">
+              <span>VIEW ALL</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+            </a>
+          </div>
+          <div class="admin-item-stack" id="roadProblemsStack">
+            <div style="padding: 24px; text-align: center; color: #64748b;">Loading reports...</div>
+          </div>
+        </section>
+
+        <!-- Right: AFFECTED JOURNEYS -->
+        <section class="admin-panel" style="margin-bottom: 0;">
+          <div class="admin-panel-header">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h2 class="admin-panel-heading">AFFECTED JOURNEYS</h2>
+                <span id="journeyImpactBadge" style="padding: 2px 8px; border-radius: 4px; background-color: #dbe1ff; color: #00174b; font-size: 11px; font-weight: 700;">—</span>
+              </div>
+              <p class="admin-panel-sub">Active logistics routes intersecting restrictions</p>
+            </div>
+            <a href="affected-journeys.html" class="admin-btn-view-all">
+              <span>VIEW ALL</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+            </a>
+          </div>
+          <div class="admin-item-stack" id="journeysStack">
+            <div style="padding: 24px; text-align: center; color: #64748b;">Loading journeys...</div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Interactive Modal: Create Restriction -->
+  <div id="createRestrictionModal" class="modal-backdrop hidden" style="position: fixed; inset: 0; background-color: rgba(15, 23, 42, 0.65); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: #ffffff; width: 100%; max-width: 560px; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #cbd5e1;">
+      <div style="padding: 16px 20px; background: #131b2e; color: #ffffff; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined" style="color: #dbe1ff; font-size: 20px;">add_road</span>
+          <span style="font-weight: 700; font-size: 15px;">Create Corridor Restriction</span>
+        </div>
+        <button type="button" id="closeCreateModalBtn" style="background: transparent; border: none; color: #ffffff; cursor: pointer;">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="createRestrictionForm" style="padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">Restriction Title</label>
+          <input type="text" id="inputRestTitle" required placeholder="e.g. Heavy Vehicle Restriction / Landslide Closure" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">Location / Highway</label>
+            <input type="text" id="inputRestLocation" required placeholder="e.g. Khambatki Pass (NH 48)" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">Affected Vehicles</label>
+            <select id="selectRestVehicles" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;">
+              <option>Heavy Trucks</option>
+              <option>All Vehicles</option>
+              <option>Buses (Intercity / Sleeper)</option>
+              <option>Hazardous Cargo Tankers</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">Start Date</label>
+            <input type="date" id="inputRestStartDate" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">Start Time</label>
+            <input type="time" id="inputRestStart" value="16:00" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">End Date</label>
+            <input type="date" id="inputRestEndDate" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #45464d; margin-bottom: 4px;">End Time</label>
+            <input type="time" id="inputRestEnd" value="22:00" style="width: 100%; height: 38px; padding: 0 12px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 14px;" />
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px;">
+          <button type="button" id="cancelCreateModalBtn" style="height: 36px; padding: 0 14px; border-radius: 4px; background: #f1f5f9; border: 1px solid #cbd5e1; font-weight: 600; cursor: pointer;">
+            Cancel
+          </button>
+          <button type="submit" class="admin-btn-primary" style="height: 36px;" id="publishBtn">
+            Publish Restriction
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Modal: Review Incident -->
+  <div id="reviewIncidentModal" class="modal-backdrop hidden" style="position: fixed; inset: 0; background-color: rgba(15, 23, 42, 0.65); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: #ffffff; width: 100%; max-width: 520px; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #cbd5e1;">
+      <div style="padding: 16px 20px; background: #0f172a; color: #ffffff; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined" style="color: #ffdad6; font-size: 20px;">verified_user</span>
+          <span style="font-weight: 700; font-size: 15px;" id="modalReviewId">Review Incident</span>
+        </div>
+        <button type="button" id="closeReviewModalBtn" style="background: transparent; border: none; color: #ffffff; cursor: pointer;">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div style="padding: 20px;">
+        <h3 id="modalReviewTitle" style="font-size: 16px; font-weight: 700; color: #0b1c30; margin-bottom: 4px;"></h3>
+        <p id="modalReviewLoc" style="font-size: 13px; color: #64748b; margin-bottom: 4px;"></p>
+        <p id="modalReviewReporter" style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;"></p>
+        <div id="modalReviewPhoto" style="margin-bottom: 12px; display: none;"><img id="modalReviewPhotoImg" style="max-width: 100%; border-radius: 4px; border: 1px solid #e2e8f0;" /></div>
+        <div style="background: #eff4ff; border-left: 4px solid #0051d5; padding: 12px; border-radius: 4px; font-size: 13px; color: #0b1c30; margin-bottom: 16px;" id="modalReviewDesc"></div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="button" class="admin-btn-action" style="height: 36px;" id="btnDismissIncident">
+            Reject Report
+          </button>
+          <button type="button" class="admin-btn-primary" style="height: 36px; background-color: #059669;" id="btnVerifyBroadcast">
+            Verify & Broadcast Alert
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Restriction Modal -->
+  <div id="viewRestrictionModal" style="position: fixed; inset: 0; background-color: rgba(15, 23, 42, 0.65); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: #ffffff; width: 100%; max-width: 480px; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #cbd5e1;">
+      <div style="padding: 16px 20px; background: #131b2e; color: #ffffff; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-weight: 700; font-size: 15px;">Restriction Details</span>
+        <button type="button" onclick="document.getElementById('viewRestrictionModal').style.display='none'" style="background: transparent; border: none; color: #ffffff; cursor: pointer;">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div style="padding: 20px;" id="viewRestrictionContent"></div>
+    </div>
+  </div>
+
+  <script src="../../env.js"></script>
+  <script type="module" src="../../auth-guard.js"></script>
+  <script type="module">
+    import { onRestrictionsSnapshot, onRoadProblemsSnapshot, onJourneysSnapshot, createRestriction, verifyProblem, rejectProblem, updateRestriction, formatTimestamp, getAdminProfile } from '../../admin-firebase.js';
+    import { auth } from '../../firebase-config.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+    // Set default dates
+    const today = new Date().toISOString().split('T')[0];
+    const startDateInput = document.getElementById('inputRestStartDate');
+    const endDateInput = document.getElementById('inputRestEndDate');
+    if (startDateInput) startDateInput.value = today;
+    if (endDateInput) endDateInput.value = today;
+
+    // Admin profile in header
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const profile = await getAdminProfile();
+        if (profile) {
+          const nameEl = document.getElementById('adminNameDash');
+          const roleEl = document.getElementById('adminRoleDash');
+          if (nameEl) nameEl.textContent = profile.name || 'Admin';
+          if (roleEl) roleEl.textContent = profile.role === 'admin' ? 'Chief Controller' : (profile.role || 'Controller');
+        }
+      }
+    });
+
+    // Store current review problem ID
+    let currentReviewId = null;
+
+    // ============ RESTRICTIONS REALTIME ============
+    let allRestrictions = [];
+    onRestrictionsSnapshot((restrictions) => {
+      allRestrictions = restrictions;
+      const active = restrictions.filter(r => r.status === 'active');
+      const upcoming = restrictions.filter(r => r.status === 'upcoming');
+
+      document.getElementById('kpi-active-restrictions').textContent = active.length;
+      document.getElementById('kpi-starting-soon').textContent = upcoming.length;
+
+      // Render active restrictions table
+      const tbody = document.getElementById('restrictionsTableBody');
+      if (active.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:#64748b;">No active restrictions. Create one to get started.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = active.map(r => {
+        const iconMap = { 'Heavy Vehicle Restriction': 'no_crash', 'Road Closure': 'block', 'Bus Restriction': 'directions_bus', 'Hazardous Cargo Restriction': 'dangerous', 'Hazardous Cargo': 'dangerous' };
+        const icon = iconMap[r.title] || 'warning';
+        const iconColor = r.title === 'Road Closure' ? '#dc2626' : '#0051d5';
+        const timeWindow = (r.startTime || '') + ' – ' + (r.endTime || '');
+        return `<tr>
+          <td><div style="display:flex;align-items:center;gap:8px;">
+            <span class="material-symbols-outlined" style="color:${iconColor};font-size:18px;">${icon}</span>
+            <span style="font-weight:600;color:#0b1c30;">${r.title || 'Restriction'}</span>
+          </div></td>
+          <td><span style="font-weight:500;color:#0b1c30;">${r.location || ''}</span></td>
+          <td><span>${r.vehicles || ''}</span></td>
+          <td style="font-feature-settings:'tnum';font-weight:500;">${timeWindow}</td>
+          <td style="text-align:center;">
+            <select onchange="window._updateRestStatus('${r.id}', this.value)" style="padding:2px 8px;border-radius:4px;border:1px solid #e2e8f0;font-size:12px;font-weight:600;cursor:pointer;">
+              <option value="active" ${r.status==='active'?'selected':''}>Active</option>
+              <option value="monitoring">Monitoring</option>
+              <option value="closed">Closed</option>
+              <option value="expired">Expired</option>
+            </select>
+          </td>
+          <td style="text-align:right;">
+            <button type="button" class="admin-btn-table-view" onclick="window._viewRestriction('${r.id}')">View</button>
+          </td>
+        </tr>`;
+      }).join('');
+    });
+
+    window._updateRestStatus = async (id, status) => {
+      try {
+        await updateRestriction(id, { status });
+      } catch (e) { alert('Failed to update: ' + e.message); }
+    };
+
+    window._viewRestriction = (id) => {
+      const r = allRestrictions.find(x => x.id === id);
+      if (!r) return;
+      const modal = document.getElementById('viewRestrictionModal');
+      const content = document.getElementById('viewRestrictionContent');
+      content.innerHTML = `
+        <div style="margin-bottom:12px;"><strong style="font-size:18px;">${r.title}</strong></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;">
+          <div><span style="color:#64748b;display:block;">Location</span><strong>${r.location}</strong></div>
+          <div><span style="color:#64748b;display:block;">Vehicles</span><strong>${r.vehicles}</strong></div>
+          <div><span style="color:#64748b;display:block;">Start</span><strong>${r.startDate || ''} ${r.startTime || ''}</strong></div>
+          <div><span style="color:#64748b;display:block;">End</span><strong>${r.endDate || ''} ${r.endTime || ''}</strong></div>
+          <div><span style="color:#64748b;display:block;">Status</span><strong>${r.status}</strong></div>
+          <div><span style="color:#64748b;display:block;">Created</span><strong>${formatTimestamp(r.createdAt)}</strong></div>
+        </div>`;
+      modal.style.display = 'flex';
+    };
+
+    // ============ ROAD PROBLEMS REALTIME ============
+    let allProblems = [];
+    onRoadProblemsSnapshot((problems) => {
+      allProblems = problems;
+      const pending = problems.filter(p => p.status === 'pending');
+      document.getElementById('kpi-reports-verify').textContent = pending.length;
+      document.getElementById('pendingBadge').textContent = pending.length + ' Pending';
+      document.getElementById('pendingSubtext').textContent = pending.length + ' Unverified driver submissions requiring controller sign-off';
+
+      const stack = document.getElementById('roadProblemsStack');
+      const top3 = pending.slice(0, 3);
+      if (top3.length === 0) {
+        stack.innerHTML = '<div style="padding:24px;text-align:center;color:#64748b;">No pending reports. All clear!</div>';
+        return;
+      }
+      const iconMap = { 'Road Blocked': 'report', 'Waterlogging': 'water', 'Flooding / Water': 'water', 'Accident': 'car_crash', 'Road Damage': 'report', 'Vehicle Breakdown': 'local_shipping', 'Other Hazard': 'warning' };
+      stack.innerHTML = top3.map(p => {
+        const icon = iconMap[p.problemType] || 'warning';
+        const isCritical = ['Road Blocked', 'Accident'].includes(p.problemType);
+        const railClass = isCritical ? 'rail-red' : 'rail-blue';
+        const iconColor = isCritical ? '#dc2626' : '#0051d5';
+        return `<div class="admin-card-item ${railClass}">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="admin-icon-square" style="color:${iconColor};"><span class="material-symbols-outlined" style="font-size:20px;">${icon}</span></div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:#0b1c30;">${p.problemType || 'Report'}</div>
+              <div style="font-size:13px;color:#0b1c30;">${p.location || ''}</div>
+              <div style="font-size:11px;color:#64748b;">Reported ${formatTimestamp(p.createdAt)} by ${p.reporterName || 'Driver'}</div>
+            </div>
+          </div>
+          <button type="button" class="admin-btn-review" onclick="window._openReview('${p.id}')">REVIEW</button>
+        </div>`;
+      }).join('');
+    });
+
+    window._openReview = (id) => {
+      const p = allProblems.find(x => x.id === id);
+      if (!p) return;
+      currentReviewId = id;
+      document.getElementById('modalReviewId').textContent = 'Review Incident ' + id.substring(0,8).toUpperCase();
+      document.getElementById('modalReviewTitle').textContent = p.problemType || 'Report';
+      document.getElementById('modalReviewLoc').textContent = p.location || '';
+      document.getElementById('modalReviewReporter').textContent = 'Reported by ' + (p.reporterName || 'Driver') + (p.reporterVehicle ? ' • ' + p.reporterVehicle : '') + ' • ' + formatTimestamp(p.createdAt);
+      document.getElementById('modalReviewDesc').textContent = p.description || 'No additional description provided.';
+      // Photo
+      const photoDiv = document.getElementById('modalReviewPhoto');
+      const photoImg = document.getElementById('modalReviewPhotoImg');
+      if (p.photo) { photoDiv.style.display = 'block'; photoImg.src = p.photo; } else { photoDiv.style.display = 'none'; }
+      document.getElementById('reviewIncidentModal').style.display = 'flex';
+    };
+
+    document.getElementById('btnDismissIncident').addEventListener('click', async () => {
+      if (!currentReviewId) return;
+      try {
+        await rejectProblem(currentReviewId, 'Report reviewed and dismissed as unverified / incorrect by Highway Operations Control.');
+        document.getElementById('reviewIncidentModal').style.display = 'none';
+        alert('Report dismissed & rejection notice dispatched to submitting driver.');
+        currentReviewId = null;
+      } catch (e) { alert('Failed: ' + e.message); }
+    });
+
+    document.getElementById('btnVerifyBroadcast').addEventListener('click', async () => {
+      if (!currentReviewId) return;
+      try {
+        await verifyProblem(currentReviewId, true);
+        document.getElementById('reviewIncidentModal').style.display = 'none';
+        alert('Report verified! Advisory broadcasted and driver notified.');
+        currentReviewId = null;
+      } catch (e) { alert('Failed: ' + e.message); }
+    });
+
+    document.getElementById('closeReviewModalBtn').addEventListener('click', () => {
+      document.getElementById('reviewIncidentModal').style.display = 'none';
+    });
+
+    // ============ JOURNEYS REALTIME ============
+    onJourneysSnapshot((journeys) => {
+      document.getElementById('kpi-affected-journeys').textContent = journeys.length;
+      const badge = document.getElementById('journeyImpactBadge');
+      badge.textContent = journeys.length > 0 ? journeys.length + ' Active' : 'None';
+
+      const stack = document.getElementById('journeysStack');
+      const top3 = journeys.slice(0, 3);
+      if (top3.length === 0) {
+        stack.innerHTML = '<div style="padding:24px;text-align:center;color:#64748b;">No active journeys.</div>';
+        return;
+      }
+      stack.innerHTML = top3.map(j => {
+        const route = (j.origin || 'Origin') + ' → ' + (j.destination || 'Destination');
+        return `<div class="admin-card-item" style="background-color:#eff4ff;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="admin-icon-square" style="color:#0051d5;"><span class="material-symbols-outlined" style="font-size:20px;">local_shipping</span></div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:#0b1c30;">${route}</div>
+              <div style="font-size:13px;color:#45464d;">${j.vehicleType || 'Vehicle'}</div>
+              <div style="display:inline-flex;align-items:center;gap:4px;color:#dc2626;font-size:11px;font-weight:600;margin-top:2px;">
+                <span class="material-symbols-outlined" style="font-size:14px;">warning</span>
+                <span>${j.hasRestriction ? 'Restriction ahead' : 'Active journey'}</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+            <span class="admin-eta-badge">Started ${formatTimestamp(j.createdAt)}</span>
+          </div>
+        </div>`;
+      }).join('');
+    });
+
+    // ============ CREATE RESTRICTION ============
+    const createModal = document.getElementById('createRestrictionModal');
+    document.getElementById('openCreateModalBtn').addEventListener('click', () => { createModal.style.display = 'flex'; });
+    document.getElementById('closeCreateModalBtn').addEventListener('click', () => { createModal.style.display = 'none'; });
+    document.getElementById('cancelCreateModalBtn').addEventListener('click', () => { createModal.style.display = 'none'; });
+
+    document.getElementById('createRestrictionForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('publishBtn');
+      btn.disabled = true; btn.textContent = 'Publishing...';
+      try {
+        const data = {
+          title: document.getElementById('inputRestTitle').value.trim(),
+          location: document.getElementById('inputRestLocation').value.trim(),
+          vehicles: document.getElementById('selectRestVehicles').value,
+          startDate: document.getElementById('inputRestStartDate').value,
+          startTime: document.getElementById('inputRestStart').value,
+          endDate: document.getElementById('inputRestEndDate').value,
+          endTime: document.getElementById('inputRestEnd').value,
+          status: 'active'
+        };
+        // Determine if upcoming
+        const now = new Date();
+        const startDT = new Date(data.startDate + 'T' + data.startTime);
+        if (startDT > now) data.status = 'upcoming';
+
+        await createRestriction(data);
+        createModal.style.display = 'none';
+        document.getElementById('createRestrictionForm').reset();
+        if (startDateInput) startDateInput.value = today;
+        if (endDateInput) endDateInput.value = today;
+        alert('Corridor restriction published successfully.');
+      } catch (err) {
+        alert('Failed to create restriction: ' + err.message);
+      } finally {
+        btn.disabled = false; btn.textContent = 'Publish Restriction';
+      }
+    });
+
+    // ============ NOTIFICATION BUTTON ============
+    document.getElementById('notifyBtn').addEventListener('click', () => {
+      const pending = allProblems.filter(p => p.status === 'pending').length;
+      const active = allRestrictions.filter(r => r.status === 'active').length;
+      alert(`Notification Center:\n• ${pending} Driver reports awaiting verification\n• ${active} Active restrictions enforced`);
+    });
+  </script>
+</body>
+</html>

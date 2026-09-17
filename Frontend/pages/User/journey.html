@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransitClear — My Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-icon">
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+          <div>
+            <div class="brand-title">TRANSITCLEAR</div>
+            <div class="brand-subtitle">Travel & Safety Portal</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="home.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">home</span>
+              <span>Home</span>
+            </div>
+          </a>
+          <a class="nav-link active" href="journey.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">map</span>
+              <span>My Journey</span>
+            </div>
+          </a>
+          <a class="nav-link" href="alerts.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">notifications</span>
+              <span>Alerts</span>
+            </div>
+            <span class="nav-badge-dot"></span>
+          </a>
+          <a class="nav-link" href="report-problem.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">warning</span>
+              <span>Report Problem</span>
+            </div>
+          </a>
+          <a class="nav-link" href="profile.html">
+            <div class="nav-link-content">
+              <span class="material-symbols-outlined">person</span>
+              <span>Profile</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="emergency-helpline-box">
+          <div class="emergency-label">
+            <span class="material-symbols-outlined text-[16px]">emergency</span>
+            <span>Emergency Helpline</span>
+          </div>
+          <div class="emergency-numbers">
+            <span class="emergency-phone">1033 / 112</span>
+            <span class="emergency-authority">NHAI • Police</span>
+          </div>
+          <p class="emergency-sub">24x7 Roadside Hazard & Medical Assistance</p>
+        </div>
+
+        <button type="button" class="sidebar-logout-btn" onclick="handleAppLogout()" title="Sign out of TransitClear">
+          <span class="material-symbols-outlined text-[18px]">logout</span>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="app-header">
+        <div class="header-left">
+          <span class="material-symbols-outlined text-[28px]" style="color: var(--color-primary-navy);">traffic</span>
+          <div class="header-divider"></div>
+          <div>
+            <div class="header-brand-name">TransitClear</div>
+            <div class="header-brand-tagline">Road Restriction & Travel Safety</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active">English</button>
+            <button type="button" class="lang-btn">हिंदी</button>
+            <button type="button" class="lang-btn">मराठी</button>
+          </div>
+
+          <a href="alerts.html" class="icon-button" aria-label="View notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-badge"></span>
+          </a>
+
+          <a href="profile.html" class="driver-pill" style="text-decoration: none; color: inherit;">
+            <div class="driver-avatar">RK</div>
+            <div class="driver-info">
+              <span class="driver-name">Rajesh K.</span>
+              <span class="driver-plate">MH-04-AB-1234</span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-view active" style="display: block;">
+        <section class="screen-header">
+          <div class="screen-tag">
+            <span>Driver Console • Active Route</span>
+          </div>
+          <h1 class="screen-title">My Journey</h1>
+          <p class="screen-subtitle">View your current journey and route status.</p>
+        </section>
+
+        <!-- 1. Top Prominent Route Alert Card -->
+        <section class="route-alert-card warning">
+          <div class="card-badge-row">
+            <span class="badge-tag amber">
+              <span class="material-symbols-outlined text-[16px]">warning</span>
+              <span>ROUTE ALERT • RESTRICTION ON YOUR WAY</span>
+            </span>
+            <span class="badge-pulse">
+              <span class="pulse-dot"></span>
+              <span>Immediate Action Required</span>
+            </span>
+          </div>
+
+          <div>
+            <h2 class="alert-headline" style="color: var(--color-crimson-alert); display: flex; align-items: center; gap: 10px;">
+              <span class="material-symbols-outlined text-[28px]">error</span>
+              <span>YOUR JOURNEY IS AFFECTED</span>
+            </h2>
+            <p class="alert-description" style="font-size: 17px; font-weight: 700; color: var(--color-text-primary); margin-top: 6px;">
+              Heavy commercial vehicle restriction enforced along your planned corridor.
+            </p>
+          </div>
+
+          <div class="metrics-grid-3">
+            <div class="metric-tile">
+              <div class="metric-data">
+                <span class="metric-label">Restriction Location</span>
+                <span class="metric-value">Active Corridor Directives</span>
+                <span class="metric-sub">NHAI Managed Corridor</span>
+              </div>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-data">
+                <span class="metric-label">Restriction Hours</span>
+                <span class="metric-value" style="color: var(--color-warning-amber);">Directives Enforced</span>
+                <span class="metric-sub">Commercial Transit Window</span>
+              </div>
+            </div>
+            <div class="metric-tile highlight-amber">
+              <div class="metric-data">
+                <span class="metric-label">Your Expected Arrival (ETA)</span>
+                <span class="metric-value" style="color: var(--color-on-warning-fixed);">5:20 PM</span>
+                <span class="metric-sub" style="color: var(--color-crimson-alert); font-weight: 700;">Arriving right in restriction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="warning-slab">
+            <span class="material-symbols-outlined" style="color: var(--color-warning-amber); font-size: 24px;">report</span>
+            <span>⚠️ Your truck will reach during the restriction.</span>
+          </div>
+
+          <div class="card-cta-row">
+            <button type="button" class="btn-primary-56 trigger-guidance-modal">
+              <span>WHAT SHOULD I DO?</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <div class="cta-support-text">
+              <span class="material-symbols-outlined" style="color: var(--color-emerald-clear);">check_circle</span>
+              <span style="font-weight: 700; color: var(--color-text-primary);">2 suitable options available</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Current Journey Assignment Card -->
+        <section class="content-card" style="margin-bottom: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div class="metric-icon-box" style="width: 40px; height: 40px;">
+                <span class="material-symbols-outlined">local_shipping</span>
+              </div>
+              <div>
+                <span class="metric-label">Active Assignment</span>
+                <div style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">CURRENT JOURNEY</div>
+              </div>
+            </div>
+            <div class="badge-tag" style="background-color: var(--color-surface-container); color: var(--color-primary-navy);">
+              Vehicle: Heavy Truck • MH-04-AB-1234
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <span style="font-size: 32px; font-weight: 800; color: var(--color-primary-navy);">Mumbai</span>
+              <span class="material-symbols-outlined text-[28px]" style="color: var(--color-text-muted);">arrow_forward</span>
+              <span style="font-size: 32px; font-weight: 800; color: var(--color-primary-navy);">Goa</span>
+            </div>
+            <span class="badge-tag amber">National Highway 48 / 66</span>
+          </div>
+
+          <!-- 4 Driver Metric Blocks -->
+          <div class="metrics-grid-4">
+            <div class="metric-tile" style="flex-direction: column; justify-content: space-between; min-height: 120px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="metric-label">Departure</span>
+                <span class="material-symbols-outlined text-[20px]" style="color: var(--color-text-muted);">departure_board</span>
+              </div>
+              <div class="metric-value">11:00 AM</div>
+              <span class="metric-sub">JNPT Terminal, Mumbai</span>
+            </div>
+
+            <div class="metric-tile" style="flex-direction: column; justify-content: space-between; min-height: 120px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="metric-label">Estimated Arrival</span>
+                <span class="material-symbols-outlined text-[20px]" style="color: var(--color-text-muted);">schedule</span>
+              </div>
+              <div class="metric-value" style="color: var(--color-primary-navy);">7:45 PM</div>
+              <span class="metric-sub">Calculated at current speed</span>
+            </div>
+
+            <div class="metric-tile" style="flex-direction: column; justify-content: space-between; min-height: 120px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="metric-label">Distance Remaining</span>
+                <span class="material-symbols-outlined text-[20px]" style="color: var(--color-text-muted);">straighten</span>
+              </div>
+              <div class="metric-value">420 km</div>
+              <span class="metric-sub">Total route length: 580 km</span>
+            </div>
+
+            <div class="metric-tile highlight-amber" style="flex-direction: column; justify-content: space-between; min-height: 120px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+                <span class="metric-label" style="color: var(--color-on-warning-fixed);">Journey Status</span>
+                <span class="material-symbols-outlined text-[20px]" style="color: var(--color-warning-amber);">warning</span>
+              </div>
+              <div class="metric-value" style="font-size: 16px; color: var(--color-on-warning-fixed);">⚠️ Restriction Ahead</div>
+              <span class="metric-sub" style="font-weight: 700; color: var(--color-on-warning-fixed);">on planned corridor</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-top: 8px;">
+            <button type="button" class="btn-primary-56" onclick="document.getElementById('routeProgressSection').scrollIntoView({ behavior: 'smooth' })">
+              <span class="material-symbols-outlined">alt_route</span>
+              <span>VIEW ROUTE STATUS</span>
+            </button>
+            <button type="button" class="btn-secondary-48" id="shareTransporterBtn">
+              <span class="material-symbols-outlined text-[18px]">share</span>
+              <span>Share Status with Transporter</span>
+            </button>
+            <span id="shareStatusToast" style="display: none; font-size: 13px; font-weight: 700; color: var(--color-emerald-clear);">
+              ✓ Status sent to Fleet Manager via SMS & WhatsApp!
+            </span>
+          </div>
+        </section>
+
+        <!-- 3. Journey Route Progress Timeline -->
+        <section class="journey-timeline-card" id="routeProgressSection">
+          <div style="margin-bottom: 8px;">
+            <h2 style="font-size: 20px; font-weight: 700; color: var(--color-text-primary);">Journey Route Progress</h2>
+            <p style="font-size: 14px; color: var(--color-text-muted);">Key checkpoints along your route</p>
+          </div>
+
+          <div class="timeline-track-grid">
+            <div class="timeline-step-card">
+              <div class="checkpoint-header">
+                <div class="checkpoint-badge green">✓</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--color-emerald-clear);">Journey Started</div>
+                  <span class="metric-label">Checkpoint 01</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 16px; font-weight: 700; color: var(--color-text-primary);">Mumbai</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">Departed 11:00 AM</div>
+              </div>
+            </div>
+
+            <div class="timeline-step-card">
+              <div class="checkpoint-header">
+                <div class="checkpoint-badge green">✓</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--color-emerald-clear);">Pune Bypass</div>
+                  <span class="metric-label">Checkpoint 02</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 16px; font-weight: 700; color: var(--color-text-primary);">Pune</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">Passed at 2:15 PM</div>
+              </div>
+            </div>
+
+            <div class="timeline-step-card warning-checkpoint">
+              <div class="checkpoint-header">
+                <div class="checkpoint-badge amber">⚠️</div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #9a3412;">Highway Ghat Section</div>
+                  <span class="metric-label" style="color: #c2410c;">Restriction Point</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--color-crimson-alert);">Directives Enforced</div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--color-text-primary); margin-top: 2px;">Your ETA: 5:20 PM</div>
+              </div>
+            </div>
+
+            <div class="timeline-step-card">
+              <div class="checkpoint-header">
+                <div class="checkpoint-badge neutral">
+                  <span class="material-symbols-outlined text-[20px]">pin_drop</span>
+                </div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--color-text-primary);">Goa</div>
+                  <span class="metric-label">Final Destination</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 16px; font-weight: 700; color: var(--color-text-primary);">Margao Logistics Hub</div>
+                <div style="font-size: 13px; color: var(--color-text-muted);">Estimated 7:45 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="advisory-strip">
+            <span class="material-symbols-outlined text-[22px]">local_parking</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 8px;">
+              <span>Safe holding yard and bypass available before corridor checkpoint.</span>
+              <span class="metric-label">Rest stop & security</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Baseline Clear Route View -->
+        <section class="content-card">
+          <div>
+            <span class="metric-label">Alternative Scenario: When No Restrictions Are Active</span>
+            <h3 style="font-size: 18px; font-weight: 800; color: var(--color-text-primary); margin-top: 2px;">Baseline Route View</h3>
+          </div>
+
+          <div style="background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: var(--radius-lg); padding: 16px; display: flex; align-items: center; gap: 14px;">
+            <span class="material-symbols-outlined text-[28px]" style="color: var(--color-emerald-clear);">verified</span>
+            <div>
+              <div style="font-size: 16px; font-weight: 800; color: #065f46;">✅ YOUR JOURNEY IS CLEAR</div>
+              <p style="font-size: 13px; color: #047857; margin-top: 2px;">
+                No current restriction is affecting your journey. All highway sectors are open for heavy commercial trucks.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; background-color: var(--color-surface-low); padding: 16px 20px; border-radius: var(--radius-lg); flex-wrap: wrap; gap: 14px;">
+            <div>
+              <span class="metric-label">Approved Clear Corridor</span>
+              <div style="font-size: 18px; font-weight: 800; color: var(--color-primary-navy);">
+                Mumbai → Goa • ETA: 7:45 PM • 420 km
+              </div>
+            </div>
+            <button type="button" class="btn-primary-56" onclick="window.open('https://maps.google.com/?q=Mumbai+to+Goa', '_blank')">
+              <span class="material-symbols-outlined">navigation</span>
+              <span>START NAVIGATION</span>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Guidance Modal -->
+  <div class="modal-overlay hidden" id="driverGuidanceModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="metric-label" style="color: #fed7aa;">ACTION PLAN REQUIRED</span>
+          <h2 style="font-size: 22px; font-weight: 800; margin-top: 2px;">What Should I Do?</h2>
+          <p style="font-size: 13px; color: #cbd5e1; margin-top: 2px;">Active Highway Corridor Restriction Window</p>
+        </div>
+        <button type="button" class="icon-button" id="closeGuidanceModalBtn" style="background: transparent; border: none; color: #ffffff;">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 14px; font-weight: 700; color: var(--color-text-primary);">
+          Choose a verified driver option to prevent traffic fines & long highway queues:
+        </p>
+        <div class="modal-option-card recommended">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="badge-tag green" style="font-size: 10px;">Option 1 • Recommended</span>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--color-text-primary);">Stop safely & wait at approved holding yard</h3>
+            </div>
+            <span class="material-symbols-outlined text-[22px]" style="color: var(--color-emerald-clear);">verified</span>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-primary); line-height: 1.4;">
+            Park at <strong>Shree Ganesh Logistics Park (KM 54)</strong>, located prior to restriction start. Free authenticated parking, security, water & food stalls available.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="badge-tag" style="background-color: #ffffff; color: var(--color-primary-navy); font-size: 11px;">💧 Clean Drinking Water</span>
+            <span class="badge-tag" style="background-color: #ffffff; color: var(--color-primary-navy); font-size: 11px;">🍛 24hr Canteen</span>
+            <span class="badge-tag" style="background-color: #ffffff; color: var(--color-primary-navy); font-size: 11px;">🛡️ Secure Truck Parking</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+            <button type="button" class="btn-primary-56" style="height: 44px; padding: 0 18px; font-size: 13px; background-color: var(--color-emerald-clear);" onclick="handleSelectModalOption('Option 1: Navigating to KM 54 Holding Yard')">
+              Navigate to Holding Yard →
+            </button>
+            <span style="font-size: 12px; color: var(--color-text-muted);">Capacity: 48 truck spaces left</span>
+          </div>
+        </div>
+
+        <div class="modal-option-card">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="badge-tag" style="background-color: var(--color-surface-container); font-size: 10px;">Option 2</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--color-text-primary);">Leave earlier to cross before closure</h3>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.4;">
+            You must pass the corridor restriction checkpoint before closure time. Requires increasing safe cruise speed without exceeding NHAI 60 km/h truck limits.
+          </p>
+          <div>
+            <button type="button" class="btn-outline-48" style="height: 40px; font-size: 12px;" onclick="handleSelectModalOption('Option 2: Recalculating speed profile to cross early')">
+              Check Speed Timeline
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-option-card">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="badge-tag" style="background-color: var(--color-surface-container); font-size: 10px;">Option 3</span>
+            <h3 style="font-size: 15px; font-weight: 700; color: var(--color-text-primary);">Use alternate bypass corridor (Wai – Surur)</h3>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.4;">
+            Bypasses ghat section via state corridor. Adds <strong>+22 km to +32 km</strong> and approximately 45 min extra drive time, but has no commercial weight bans today.
+          </p>
+          <div>
+            <button type="button" class="btn-outline-48" style="height: 40px; font-size: 12px;" onclick="handleSelectModalOption('Option 3: Switched to Wai-Surur Bypass Corridor')">
+              Switch to Bypass Route
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span style="font-size: 12px; color: var(--color-text-muted);">
+          Need help deciding? Call Dispatcher at <strong>+91 98200 12345</strong>
+        </span>
+        <button type="button" class="btn-secondary-48" id="dismissGuidanceModalBtn" style="height: 40px;">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../env.js"></script>
+  <script type="module" src="../../auth-guard.js"></script>
+  <script type="module" src="../../driver-data.js"></script>
+  <script type="module" src="../../journey-maps.js"></script>
+  <script type="module" src="../../i18n.js"></script>
+  <script src="../../mockData.js"></script>
+  <script src="../../app.js"></script>
+</body>
+</html>

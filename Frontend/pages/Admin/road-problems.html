@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>TransitClear — Road Problems</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#b9c7e0","outline":"#76777d","on-secondary-container":"#fefcff","secondary-container":"#316bf3","on-primary-container":"#7c839b","on-surface-variant":"#45464d","surface-container-highest":"#d3e4fe","outline-variant":"#c6c6cd","on-primary":"#ffffff","inverse-surface":"#213145","background":"#f8f9ff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#003ea8","primary-container":"#131b2e","on-surface":"#0b1c30","on-error":"#ffffff","surface-container-high":"#dce9ff","secondary-fixed-dim":"#b4c5ff","primary-fixed-dim":"#bec6e0","on-secondary-fixed":"#00174b","tertiary-container":"#0d1c2f","on-primary-fixed-variant":"#3f465c","surface":"#f8f9ff","on-tertiary-fixed":"#0d1c2f","surface-container":"#e5eeff","primary-fixed":"#dae2fd","tertiary-fixed":"#d5e3fd","on-tertiary-container":"#76859b","secondary":"#0051d5","secondary-fixed":"#dbe1ff","on-primary-fixed":"#131b2e","surface-bright":"#f8f9ff","tertiary":"#000000","inverse-primary":"#bec6e0","error-container":"#ffdad6","on-background":"#0b1c30","on-secondary":"#ffffff","primary":"#000000","error":"#ba1a1a","on-tertiary-fixed-variant":"#3a485c","on-error-container":"#93000a","surface-dim":"#cbdbf5","surface-tint":"#565e74","inverse-on-surface":"#eaf1ff","on-tertiary":"#ffffff","surface-container-low":"#eff4ff","surface-variant":"#d3e4fe"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xs":"0.25rem","margin-sm":"1rem","space-sm":"0.5rem","space-md":"0.75rem","gutter":"1rem","space-lg":"1rem","margin":"1.5rem","gutter-lg":"1.5rem","space-xl":"1.5rem"},fontFamily:{"label-caps":["Inter"],"data-metric":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"data-tabular":["Inter"],"title-sm":["Inter"]},fontSize:{"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"700"}],"data-metric":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"data-tabular":["13px",{"lineHeight":"18px","fontWeight":"500"}],"title-sm":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary-container text-on-primary flex flex-col justify-between z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-gutter-lg pt-margin pb-space-lg flex flex-col gap-space-xs"><a href="dashboard.html" class="flex items-center gap-space-sm text-inherit no-underline"><div class="w-7 h-7 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary text-[18px]">traffic</span></div><span class="font-headline-lg text-headline-lg tracking-tight text-white font-bold">TransitClear</span></a><div class="flex items-center gap-space-xs"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span><span class="font-label-caps text-label-caps uppercase text-on-primary-container tracking-wider">Operations Control</span></div></div><div class="px-gutter-lg py-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-primary-container tracking-wider">Main Navigation</span></div><nav class="flex flex-col gap-space-xs px-gutter"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="dashboard.html"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="restrictions.html"><span class="material-symbols-outlined text-[20px]">construction</span><span>Restrictions</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm bg-secondary text-on-secondary shadow-sm" href="road-problems.html"><span class="material-symbols-outlined text-[20px]">warning</span><span>Road Problems</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="affected-journeys.html"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span>Affected Journeys</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="users.html"><span class="material-symbols-outlined text-[20px]">group</span><span>Users</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="reports.html"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Reports</span></a></nav></div><div class="flex flex-col"><div class="h-px mx-gutter bg-surface-container-highest/15 mb-space-sm"></div><nav class="flex flex-col gap-space-xs px-gutter pb-margin"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="settings.html"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-title-sm text-title-sm text-primary-fixed-dim hover:bg-surface-container-highest/10 hover:text-on-primary transition-colors" href="admin-profile.html"><span class="material-symbols-outlined text-[20px]">account_circle</span><span>Admin Profile</span></a></nav></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface font-semibold">TransitClear</span><span class="text-outline-variant">|</span></div><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-[16px]">shield</span><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Authority: Maharashtra Traffic Control</span></div></div><div class="flex items-center gap-gutter"><button aria-label="Notifications" class="relative p-space-xs rounded hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-on-surface-variant text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><a href="admin-profile.html" class="flex items-center gap-space-md pl-space-sm text-inherit no-underline"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left"><div class="flex items-center gap-space-xs cursor-pointer"><span class="font-title-sm text-title-sm text-on-surface font-semibold">Admin</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">arrow_drop_down</span></div><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Chief Controller</span></div></a></div></header><main class="relative pt-14 w-full bg-surface min-h-screen px-gutter-lg py-margin"><div class="flex flex-col w-full">
+<!-- Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-margin pb-space-md shadow-sm bg-surface-container-lowest p-margin rounded-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Road Problems</span>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-error-container text-on-error-container">
+<span class="inline-block w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold" id="pending-badge">Loading...</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Review, validate, and escalate physical road disruptions submitted by commercial fleet operators.</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span class="font-label-sm text-label-sm font-semibold">Live Queue Sync Active</span>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-col md:flex-row gap-space-md mb-margin">
+<div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-space-md rounded bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:bg-surface-container-low shadow-sm" id="search-input" placeholder="Search reports by road, corridor, or incident type..." type="text"></div>
+<div class="flex items-center gap-space-sm">
+<div class="relative min-w-[200px]"><select class="w-full h-10 px-space-md pr-8 rounded bg-surface-container-lowest text-on-surface font-title-sm text-title-sm appearance-none focus:outline-none shadow-sm cursor-pointer" id="status-filter">
+<option value="all">All Status</option><option selected value="pending">Pending Verification</option><option value="verified">Verified</option><option value="rejected">Rejected</option></select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span></div>
+<div class="relative min-w-[210px]"><select class="w-full h-10 px-space-md pr-8 rounded bg-surface-container-lowest text-on-surface font-title-sm text-title-sm appearance-none focus:outline-none shadow-sm cursor-pointer" id="type-filter">
+<option value="all">All Types</option><option value="Road Blocked">Road Blocked</option><option value="Flooding / Water">Waterlogging</option><option value="Accident">Accident</option><option value="Road Damage">Road Damage</option><option value="Vehicle Breakdown">Vehicle Breakdown</option><option value="Other Hazard">Other Hazard</option></select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span></div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-margin items-start">
+<!-- Left: Report cards -->
+<div class="lg:col-span-6 xl:col-span-7 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider" id="queue-label">Loading reports...</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Order: Chronological Descending</span>
+</div>
+<div id="cards-container" class="flex flex-col gap-space-sm"></div>
+</div>
+<!-- Right: Detail panel -->
+<div class="lg:col-span-6 xl:col-span-5 sticky top-20">
+<div class="bg-surface-container-lowest rounded-lg shadow-sm p-margin flex flex-col gap-space-md" id="detail-panel">
+<div class="py-8 text-center text-on-surface-variant">Select a report from the list to view details</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Reject Problem Modal -->
+<div class="hidden fixed inset-0 bg-primary-container/60 backdrop-blur-sm z-50 flex items-center justify-center p-gutter" id="rejectReportModal">
+  <div class="bg-surface-container-lowest w-full max-w-lg rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md border border-outline-variant/50 animate-in fade-in zoom-in-95 duration-150">
+    <div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+      <div class="flex items-center gap-space-sm">
+        <span class="material-symbols-outlined text-error text-[24px]">cancel</span>
+        <div>
+          <h3 class="font-headline-md text-headline-md text-on-surface font-bold">Reject Incident Report</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Review finding & notify driver of administrative action</p>
+        </div>
+      </div>
+      <button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" id="btnCloseRejectModal" type="button">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Target Report Info Summary -->
+    <div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-1">
+      <div class="flex items-center justify-between">
+        <span class="font-title-sm text-title-sm text-on-surface font-semibold" id="modal-reject-type">Report</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant font-mono" id="modal-reject-id">#ID</span>
+      </div>
+      <span class="font-body-sm text-body-sm text-on-surface-variant" id="modal-reject-location">Location</span>
+      <div class="flex items-center gap-1 mt-1 text-xs text-secondary font-medium">
+        <span class="material-symbols-outlined text-[15px]">person</span>
+        <span id="modal-reject-reporter">Reported by Driver</span>
+      </div>
+    </div>
+
+    <!-- Quick Presets -->
+    <div class="flex flex-col gap-1.5">
+      <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Reason Directives (Click to Use)</span>
+      <div class="grid grid-cols-2 gap-2">
+        <button type="button" class="reject-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-reason="Incorrect / False Report: Ground patrol inspected the location and confirmed no obstruction.">
+          ⚠️ False / Wrong Report
+        </button>
+        <button type="button" class="reject-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-reason="Unverified Telemetry: GPS coordinates & road telemetry do not correspond to reported road hazard.">
+          ⛔ Telemetry Mismatch
+        </button>
+        <button type="button" class="reject-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-reason="Hazard Already Cleared: Sector was cleared prior to field validation by highway maintenance.">
+          🕒 Already Cleared
+        </button>
+        <button type="button" class="reject-preset-btn text-left p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface text-xs font-medium border border-surface-container transition-colors" data-reason="Duplicate / Incomplete Report: Information insufficient to substantiate highway closure.">
+          📋 Duplicate / Incomplete
+        </button>
+      </div>
+    </div>
+
+    <!-- Rejection Note Textarea -->
+    <div class="flex flex-col gap-space-xs">
+      <label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="rejectionReasonInput">Explanation Transmitted to Submitting Driver *</label>
+      <textarea id="rejectionReasonInput" rows="3" class="w-full p-space-sm rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary transition-all resize-none border border-outline-variant/30" placeholder="Type reason for rejecting this report..."></textarea>
+    </div>
+
+    <!-- Issue Warning Option -->
+    <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-error-container/20 border border-error/20">
+      <input type="checkbox" id="rejectIssueWarning" class="accent-error w-4 h-4 cursor-pointer">
+      <span class="text-xs font-medium text-error">Also issue formal Authority Warning to Driver's account</span>
+    </label>
+
+    <!-- Actions -->
+    <div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-surface-container">
+      <button class="px-space-md py-space-sm rounded bg-surface-container text-on-surface font-title-sm text-title-sm hover:bg-surface-container-high transition-colors" id="btnCancelRejectModal" type="button">
+        Cancel
+      </button>
+      <button class="px-space-lg py-space-sm rounded bg-error text-on-error font-title-sm text-title-sm hover:bg-error/90 transition-colors shadow flex items-center gap-1.5" type="button" id="btnConfirmRejectReport">
+        <span class="material-symbols-outlined text-[18px]">cancel</span>
+        <span>Reject Report & Notify Driver</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Action Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-outline-variant transition-all duration-300" id="road-problem-toast">
+  <span class="material-symbols-outlined text-secondary text-[24px] mt-0.5" id="toast-icon">check_circle</span>
+  <div class="flex flex-col flex-1 min-w-0">
+    <span class="font-title-sm text-title-sm text-on-surface font-bold" id="toast-title">Action Completed</span>
+    <p class="font-body-sm text-body-sm text-on-surface-variant break-words" id="toast-message">Report processed successfully.</p>
+  </div>
+  <button class="text-on-surface-variant hover:text-on-surface p-1" id="close-toast-btn" type="button">
+    <span class="material-symbols-outlined text-[18px]">close</span>
+  </button>
+</div>
+
+<script src="../../env.js"></script>
+<script type="module" src="../../auth-guard.js"></script>
+<script type="module">
+import { onRoadProblemsSnapshot, verifyProblem, rejectProblem, formatTimestamp } from '../../admin-firebase.js';
+
+let allProblems = [];
+let selectedId = null;
+const cardsContainer = document.getElementById('cards-container');
+const detailPanel = document.getElementById('detail-panel');
+const searchInput = document.getElementById('search-input');
+const statusFilter = document.getElementById('status-filter');
+const typeFilter = document.getElementById('type-filter');
+
+// Realtime listener
+onRoadProblemsSnapshot((problems) => {
+  allProblems = problems;
+  renderCards();
+});
+
+function renderCards() {
+  const search = searchInput.value.toLowerCase();
+  const statusF = statusFilter.value;
+  const typeF = typeFilter.value;
+
+  let filtered = allProblems;
+  if (statusF !== 'all') filtered = filtered.filter(p => p.status === statusF);
+  if (typeF !== 'all') filtered = filtered.filter(p => p.problemType === typeF);
+  if (search) filtered = filtered.filter(p => ((p.location||'')+(p.problemType||'')+(p.description||'')).toLowerCase().includes(search));
+
+  const pendingCount = allProblems.filter(p => p.status === 'pending').length;
+  document.getElementById('pending-badge').textContent = pendingCount + ' Reports Awaiting Verification';
+  document.getElementById('queue-label').textContent = `Queue: ${filtered.length} Reports Showing`;
+
+  if (filtered.length === 0) {
+    cardsContainer.innerHTML = '<div class="py-8 text-center text-on-surface-variant">No reports found matching filters.</div>';
+    return;
+  }
+
+  const typeColorMap = { 'Road Blocked': 'bg-error', 'Accident': 'bg-error', 'Flooding / Water': 'bg-secondary-container', 'Road Damage': 'bg-outline', 'Vehicle Breakdown': 'bg-secondary', 'Other Hazard': 'bg-outline' };
+  const typeBadgeMap = { 'Road Blocked': 'bg-error-container text-on-error-container', 'Accident': 'bg-error-container text-on-error-container', 'Flooding / Water': 'bg-surface-container-highest text-on-surface', 'Road Damage': 'bg-surface-container-highest text-on-surface', 'Vehicle Breakdown': 'bg-surface-container text-on-surface', 'Other Hazard': 'bg-surface-container text-on-surface' };
+
+  cardsContainer.innerHTML = filtered.map(p => {
+    const isSelected = p.id === selectedId;
+    const railColor = typeColorMap[p.problemType] || 'bg-outline';
+    const badgeClass = typeBadgeMap[p.problemType] || 'bg-surface-container text-on-surface';
+    const statusDot = p.status === 'pending' ? 'bg-error' : (p.status === 'verified' ? 'bg-secondary' : 'bg-outline');
+    const statusText = p.status === 'pending' ? 'Pending Verification' : (p.status === 'verified' ? 'Verified' : 'Rejected');
+    const statusColor = p.status === 'pending' ? 'text-error' : (p.status === 'verified' ? 'text-secondary' : 'text-on-surface-variant line-through');
+    const ringClass = isSelected ? 'ring-2 ring-secondary' : '';
+    const btnClass = isSelected ? 'bg-secondary text-on-secondary shadow-sm hover:bg-secondary/90' : 'bg-surface-container-high text-on-surface hover:bg-surface-container';
+
+    return `<div class="report-card cursor-pointer p-space-md rounded bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-xs relative overflow-hidden ${ringClass}" onclick="window._selectReport('${p.id}')">
+      <div class="absolute left-0 top-0 bottom-0 w-1.5 ${railColor}"></div>
+      <div class="flex items-center justify-between gap-space-sm pl-2">
+        <div class="flex items-center gap-space-sm">
+          <span class="px-2 py-0.5 rounded ${badgeClass} font-label-caps text-label-caps uppercase font-bold">${p.problemType || 'Report'}</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">#${p.id.substring(0,8).toUpperCase()}</span>
+        </div>
+        <span class="font-data-tabular text-data-tabular text-on-surface-variant font-semibold">${formatTimestamp(p.createdAt)}</span>
+      </div>
+      <div class="pl-2">
+        <div class="font-headline-md text-headline-md text-on-surface font-semibold">${p.location || 'Unknown'}</div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">${p.description || 'No description provided'}</p>
+      </div>
+      <div class="flex items-center justify-between pt-space-xs pl-2">
+        <div class="flex items-center gap-space-xs">
+          <span class="w-2 h-2 rounded-full ${statusDot}"></span>
+          <span class="font-label-sm text-label-sm ${statusColor} font-medium">${statusText}</span>
+        </div>
+        <button class="px-space-md py-1 rounded ${btnClass} font-title-sm text-title-sm" type="button">REVIEW</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window._selectReport = (id) => {
+  selectedId = id;
+  renderCards();
+  const p = allProblems.find(x => x.id === id);
+  if (!p) return;
+
+  const statusBadgeClass = p.status === 'pending' ? 'bg-error-container text-on-error-container' : (p.status === 'verified' ? 'bg-surface-container-highest text-secondary' : 'bg-surface-container text-on-surface-variant');
+  const statusLabel = p.status === 'pending' ? 'Pending Review' : (p.status === 'verified' ? 'Verified' : 'Rejected');
+  const coords = (p.lat && p.lng) ? `Lat: ${p.lat.toFixed(4)}° N | Long: ${p.lng.toFixed(4)}° E` : 'Coordinates not available';
+
+  detailPanel.innerHTML = `
+    <div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/40">
+      <div class="flex items-center gap-space-xs">
+        <span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+        <span class="font-headline-md text-headline-md text-on-surface font-bold">Report #${p.id.substring(0,8).toUpperCase()}</span>
+      </div>
+      <div class="flex items-center gap-space-xs px-2 py-0.5 rounded ${statusBadgeClass}">
+        <span class="w-1.5 h-1.5 rounded-full ${p.status === 'pending' ? 'bg-error' : 'bg-secondary'}"></span>
+        <span class="font-label-caps text-label-caps uppercase font-bold">${statusLabel}</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-space-sm p-space-sm rounded bg-surface-container-low">
+      <div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Problem Type</span><span class="font-title-sm text-title-sm text-on-surface font-semibold">${p.problemType || 'Report'}</span></div>
+      <div class="flex flex-col"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Reported Time</span><span class="font-title-sm text-title-sm text-on-surface font-semibold">${formatTimestamp(p.createdAt)}</span></div>
+      <div class="flex flex-col col-span-2"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Location</span><span class="font-title-sm text-title-sm text-on-surface font-semibold">${p.location || 'Unknown'}</span></div>
+      <div class="flex flex-col col-span-2"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Reported By</span>
+        <div class="flex items-center gap-space-xs mt-0.5"><span class="material-symbols-outlined text-on-surface-variant text-[16px]">badge</span>
+        <span class="font-body-md text-body-md text-on-surface font-medium">${p.reporterName || 'Anonymous'} ${p.reporterVehicle ? '('+p.reporterVehicle+')' : ''}</span></div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Driver Observation & Notes</span>
+      <div class="p-space-sm rounded bg-surface text-on-surface font-body-md text-body-md">"${p.description || 'No description provided'}"</div>
+    </div>
+    ${p.photo ? `<div class="flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Photo Evidence</span><span class="font-label-sm text-label-sm text-secondary font-semibold">${p.lat ? 'GPS Verified' : ''}</span></div>
+      <div class="relative overflow-hidden rounded bg-surface-container-high aspect-[16/9]"><img class="w-full h-full object-cover" src="${p.photo}">
+      <div class="absolute bottom-0 inset-x-0 bg-primary-container/80 backdrop-blur-sm px-space-md py-space-xs flex items-center justify-between text-on-primary"><span class="font-label-sm text-label-sm">Driver Photo Submission</span>
+      <span class="font-label-caps text-label-caps uppercase text-primary-fixed">${coords}</span></div></div></div>` : '<div class="p-space-sm rounded bg-surface-container-low text-on-surface-variant text-center font-body-sm">No photo evidence submitted</div>'}
+    <div class="p-space-sm rounded bg-surface-container-high/60 flex items-start gap-space-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">info</span>
+      <p class="font-body-sm text-body-sm leading-snug"><strong class="font-semibold">Authority Notice:</strong> Verifying this report validates physical hazard accuracy and updates the internal corridor registry.</p>
+    </div>
+    ${p.status === 'pending' ? `<div class="flex items-center justify-end gap-space-md pt-space-xs">
+      <button class="px-space-md py-2 rounded bg-surface-container-lowest hover:bg-error-container text-error font-title-sm text-title-sm transition-colors shadow-sm ring-1 ring-error/30" onclick="window._rejectReport('${p.id}')" type="button">REJECT REPORT</button>
+      <button class="px-gutter py-2 rounded bg-primary text-on-primary hover:bg-primary/90 font-title-sm text-title-sm transition-all shadow-md flex items-center gap-space-xs" onclick="window._verifyReport('${p.id}')" type="button"><span class="material-symbols-outlined text-[18px]">check_circle</span>MARK AS VERIFIED</button>
+    </div>` : `<div class="p-space-sm rounded ${p.status === 'verified' ? 'bg-surface-container-highest text-secondary' : 'bg-error-container text-on-error-container'} font-body-sm text-body-sm flex items-center gap-space-sm">
+      <span class="material-symbols-outlined text-[18px]">${p.status === 'verified' ? 'check_circle' : 'cancel'}</span>
+      <span>This report has been <strong>${p.status}</strong> by the admin.</span>
+    </div>`}`;
+};
+
+// Toast helper
+let roadToastTimer = null;
+function showRoadToast(title, message, isError = false) {
+  const toast = document.getElementById('road-problem-toast');
+  const icon = document.getElementById('toast-icon');
+  const titleEl = document.getElementById('toast-title');
+  const msgEl = document.getElementById('toast-message');
+  if (!toast) return;
+
+  if (roadToastTimer) clearTimeout(roadToastTimer);
+
+  titleEl.textContent = title;
+  msgEl.textContent = message;
+
+  if (isError) {
+    icon.textContent = 'error';
+    icon.className = 'material-symbols-outlined text-error text-[24px] mt-0.5';
+    toast.className = 'fixed bottom-6 right-6 z-50 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-error/50 transition-all duration-300';
+  } else {
+    icon.textContent = 'check_circle';
+    icon.className = 'material-symbols-outlined text-secondary text-[24px] mt-0.5';
+    toast.className = 'fixed bottom-6 right-6 z-50 bg-surface-container-lowest rounded-xl shadow-2xl p-space-md max-w-md flex items-start gap-space-md border border-outline-variant transition-all duration-300';
+  }
+
+  toast.classList.remove('hidden');
+  roadToastTimer = setTimeout(() => {
+    toast.classList.add('hidden');
+  }, 4500);
+}
+
+document.getElementById('close-toast-btn')?.addEventListener('click', () => {
+  document.getElementById('road-problem-toast')?.classList.add('hidden');
+});
+
+// Rejection Modal Wiring
+const rejectModal = document.getElementById('rejectReportModal');
+const btnCloseRejectModal = document.getElementById('btnCloseRejectModal');
+const btnCancelRejectModal = document.getElementById('btnCancelRejectModal');
+const btnConfirmRejectReport = document.getElementById('btnConfirmRejectReport');
+const rejectionReasonInput = document.getElementById('rejectionReasonInput');
+const rejectIssueWarning = document.getElementById('rejectIssueWarning');
+
+let pendingRejectId = null;
+
+function closeRejectModal() {
+  rejectModal?.classList.add('hidden');
+  pendingRejectId = null;
+}
+
+btnCloseRejectModal?.addEventListener('click', closeRejectModal);
+btnCancelRejectModal?.addEventListener('click', closeRejectModal);
+
+document.querySelectorAll('.reject-preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const reason = btn.getAttribute('data-reason');
+    if (reason) rejectionReasonInput.value = reason;
+  });
+});
+
+window._rejectReport = (id) => {
+  const p = allProblems.find(x => x.id === id);
+  if (!p) return;
+  pendingRejectId = id;
+
+  document.getElementById('modal-reject-type').textContent = p.problemType || 'Hazard Report';
+  document.getElementById('modal-reject-id').textContent = '#' + p.id.substring(0, 8).toUpperCase();
+  document.getElementById('modal-reject-location').textContent = '📍 ' + (p.location || 'Reported Location');
+  document.getElementById('modal-reject-reporter').textContent = (p.reporterName || 'Driver') + (p.reporterVehicle ? ' (' + p.reporterVehicle + ')' : '');
+
+  rejectionReasonInput.value = 'Incorrect / False Report: Ground patrol inspected the location and confirmed no obstruction.';
+  if (rejectIssueWarning) rejectIssueWarning.checked = false;
+
+  rejectModal.classList.remove('hidden');
+};
+
+btnConfirmRejectReport?.addEventListener('click', async () => {
+  if (!pendingRejectId) return;
+
+  const reason = rejectionReasonInput.value.trim() || 'Report details could not be verified by control center.';
+  const issueWarning = rejectIssueWarning ? rejectIssueWarning.checked : false;
+
+  btnConfirmRejectReport.disabled = true;
+  const prevHtml = btnConfirmRejectReport.innerHTML;
+  btnConfirmRejectReport.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Processing...</span>';
+
+  try {
+    await rejectProblem(pendingRejectId, reason, issueWarning);
+    closeRejectModal();
+    showRoadToast(
+      'Report Rejected & Driver Notified',
+      `Direct administrative notice dispatched to submitting driver with explanation.`
+    );
+  } catch (err) {
+    console.error('Rejection failed:', err);
+    showRoadToast('Action Failed', err.message || 'Could not reject report.', true);
+  } finally {
+    btnConfirmRejectReport.disabled = false;
+    btnConfirmRejectReport.innerHTML = prevHtml;
+  }
+});
+
+window._verifyReport = async (id) => {
+  try {
+    await verifyProblem(id, true);
+    showRoadToast('Report Verified', 'Advisory broadcasted to corridor drivers and notification dispatched to reporter.');
+  } catch (e) {
+    showRoadToast('Verification Failed', e.message, true);
+  }
+};
+
+searchInput.addEventListener('input', renderCards);
+statusFilter.addEventListener('change', renderCards);
+typeFilter.addEventListener('change', renderCards);
+</script>
+</main></div>
+</body></html>
