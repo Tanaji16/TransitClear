@@ -1,7 +1,6 @@
 # Environment & Secrets
 .env
 .env*.local
-Frontend/env.js
 *serviceAccount*.json
 
 # Dependencies

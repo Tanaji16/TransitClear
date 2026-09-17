@@ -415,14 +415,15 @@
           language: selectedLang
         });
 
-        // Log out immediately so user signs in from login page
-        await logoutUser();
-
-        // Redirect to Login on success
-        window.location.href = '../Authentication/login.html?registered=true';
+        // Account created & authenticated — route directly to Driver Dashboard
+        window.location.href = '../User/home.html';
       } catch (err) {
         isSubmittingSignup = false;
-        showError(err.message || "Failed to create account. Please try again.");
+        let msg = err.message || "Failed to create account. Please try again.";
+        if (err.code === 'auth/unauthorized-domain') {
+          msg = "Domain not authorized. Please add your Vercel domain to Firebase Console -> Authentication -> Settings -> Authorized Domains.";
+        }
+        showError(msg);
       } finally {
         btn.disabled = false;
         btnText.textContent = 'CREATE ACCOUNT';

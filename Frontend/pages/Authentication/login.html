@@ -292,7 +292,9 @@
         routeUserByRole(role);
       } catch (err) {
         let msg = err.message || "Failed to log in. Please check your credentials.";
-        if (err.code === 'auth/invalid-credential' || (err.message && err.message.includes('invalid-credential'))) {
+        if (err.code === 'auth/unauthorized-domain') {
+          msg = "Domain not authorized. Please add your Vercel domain to Firebase Console -> Authentication -> Settings -> Authorized Domains.";
+        } else if (err.code === 'auth/invalid-credential' || (err.message && err.message.includes('invalid-credential'))) {
           msg = "Invalid email or password. Please check your spelling (e.g. gmail.com) and try again.";
         } else if (err.code === 'auth/user-not-found') {
           msg = "No account found with this email. Please sign up first.";

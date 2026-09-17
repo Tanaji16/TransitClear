@@ -34,13 +34,20 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Firebase configuration for TransitClear
-// Reads from env.js (loaded via <script> tag before this module)
-// To set up: copy env.example.js → env.js and add your Firebase credentials
-const firebaseConfig = window.__FIREBASE_CONFIG__;
+// Reads from env.js (if loaded), with robust project fallback for deployments
+const defaultFirebaseConfig = {
+  apiKey: "AIzaSyB1gai6anKFjovtcgnd46xVSwtP6x3hLrs",
+  authDomain: "transitclear-a5075.firebaseapp.com",
+  projectId: "transitclear-a5075",
+  storageBucket: "transitclear-a5075.firebasestorage.app",
+  messagingSenderId: "105981946292",
+  appId: "1:105981946292:web:cbd71366c9e42e84f82ae1",
+  measurementId: "G-R39FWXFPX6"
+};
 
-if (!firebaseConfig || firebaseConfig.apiKey === "YOUR_API_KEY") {
-  console.error("⚠️ Firebase config missing! Copy env.example.js → env.js and add your credentials.");
-}
+const firebaseConfig = (window.__FIREBASE_CONFIG__ && window.__FIREBASE_CONFIG__.apiKey && window.__FIREBASE_CONFIG__.apiKey !== "YOUR_API_KEY")
+  ? window.__FIREBASE_CONFIG__
+  : defaultFirebaseConfig;
 
 // Initialize Firebase app & services
 const app = initializeApp(firebaseConfig);
