@@ -2,8 +2,8 @@
   "name": "transitclear",
   "version": "1.0.0",
   "description": "TransitClear - Transport & Logistics Road Safety Portal for Drivers",
-  "private": true,
   "scripts": {
+    "build": "node build.js",
     "dev": "npx serve Frontend",
     "deploy:rules": "firebase deploy --only firestore:rules"
   },
